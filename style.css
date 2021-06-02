@@ -1,4 +1,5 @@
-#inicio{
+.inicio{
+    top: 50%;
     text-align: right;
 }
 * {
@@ -6,7 +7,7 @@
 }
 
 body {
-	background: #1D1D1F;
+	background:gray;
 	color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	min-height: 100vh;
@@ -15,11 +16,10 @@ body {
 }
 
 .contenedor {
-	max-width: 1200px;
+	max-width: 120000px;
 	width: 90%;
 	margin: auto;
 }
-
 /* --- --- CONTENEDOR PRINCIPAL --- --- */
 
 .contenido-principal {
