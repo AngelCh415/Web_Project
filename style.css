@@ -5,7 +5,13 @@
 * {
 	box-sizing: border-box;
 }
-
+.productos{
+	color: maroon;
+}
+.precio{
+	text-align: right;
+	color: #9a5833;
+}
 body {
 	background:gray;
 	color: #fff;
@@ -109,3 +115,4 @@ body {
 		width: 100%;
 	}
 }
+
