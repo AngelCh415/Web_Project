@@ -26,6 +26,9 @@ body {
 	width: 90%;
 	margin: auto;
 }
+.contenedor1 {
+	align-items: center;
+}
 /* --- --- CONTENEDOR PRINCIPAL --- --- */
 
 .contenido-principal {
