@@ -1,89 +1,106 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        <title>
-            Cafeteria 
-        </title>
-    </head>
-    <link  href = "style.css" rel= "stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.css">
-    <body>
-		<div class="contenedor">
-			<div class = "inicio"> <a href = "login.html">Iniciar sesion</a></div>
-        	<div class = "inicio"> <a href = "registro.html" >Registro </a> </div>
-			<main class="contenido-principal">
-				<img src="" alt="LOGO" class="contenido-principal__imagen">
-				<div class="contenido-principal__contenedor">
-					<h1 class="contenido-principal__titulo">Nombre de la cafeteria</h1>
-					<p class="contenido-principal__resumen">
-						Descripcion previa
-					</p>
-					<p class="contenido-principal__resumen">
-						Descripcion
-					</p>
-				</div>
-			</main>
-	
-				<div class = "carousel">
-					<div class="carousel__contenedor">
-						<button aria-label = "Anterior" class= "carousel__anterior">
-							<i class="fas fa-chevron-left"></i>
-						</button>
-						<div class = "carousel__lista">
-							<div class = "carousel__elemento">
-								<img src = "https://placeralplato.com/files/2016/07/Bagels-de-salmn-e1468696119574.jpg" alt = "Bagel de Salmon">
-								<p>Bagel de Salmon</p>
-							</div>
-							<div class="carousel_elemento">
-							<img src="https://img-global.cpcdn.com/recipes/a3c468ee4fba77d2/751x532cq70/hamburguesa-bbq-con-aros-de-cebolla-foto-principal.jpg" alt="Hamburguesa BBQ" >
-							<p>Hambuerguesa BBQ</p>
-							</div>
-							<div class = "carousel__elemento">
-								<img src = "https://www.cocinaabuenashoras.com/files/galletas-de-avena-monton-768x431.jpg" alt = "Galleta de avena">
-								<p>Galleta de avena</p>
-							</div>
-							<div class = "carousel__elemento">
-								<img src = "https://cdn3.incapto.com/wp-content/uploads/2020/11/Vainilla-Latte.jpg" alt = "Latte de Vainilla">
-								<p>Latte de Vainilla</p>
-							</div>
-							<div class = "carousel__elemento">
-								<img src = "https://www.cocinavital.mx/wp-content/uploads/2017/09/chocolatefriook.jpg" alt = "Chocolate frio">
-								<p>Chocolate frio</p>
-							</div>
-						</div>
-						<button aria-label = "Siguiente" class= "carousel__siguiente">
-							<i class="fas fa-chevron-right"></i>
-						</button>
-					
-					
-					
+<html>
+
+<head>
+	<title>
+		Cafeteria
+	</title>
+</head>
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.css">
+
+<body>
+	<div class="contenedor">
+		<div class="inicio"> <a href="login.html">Iniciar sesion</a></div>
+		<div class="inicio"> <a href="registro.html">Registro </a> </div>
+		<main class="contenido-principal">
+			<img src="" alt="LOGO" class="contenido-principal__imagen">
+			<div class="contenido-principal__contenedor">
+				<h1 class="contenido-principal__titulo">Nombre de la cafeteria</h1>
+				<p class="contenido-principal__resumen">
+					Descripcion previa
+				</p>
+				<p class="contenido-principal__resumen">
+					Descripcion
+				</p>
+			</div>
+		</main>
+		<div class="carousel">
+			<div class="carousel__contenedor">
+				<button aria-label="Anterior" class="carousel__anterior">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+				<div class="carousel__lista">
+					<div class="carousel__elemento">
+						<img src="https://placeralplato.com/files/2016/07/Bagels-de-salmn-e1468696119574.jpg"
+							alt="Bagel de Salmon">
+						<p>Bagel de Salmon</p>
 					</div>
-				<div role = "tablist" class="carousel__indicadores"></div>
+					<div class="carousel_elemento">
+						<img src="https://img-global.cpcdn.com/recipes/a3c468ee4fba77d2/751x532cq70/hamburguesa-bbq-con-aros-de-cebolla-foto-principal.jpg"
+							alt="Hamburguesa BBQ">
+						<p>Hambuerguesa BBQ</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://www.cocinaabuenashoras.com/files/galletas-de-avena-monton-768x431.jpg"
+							alt="Galleta de avena">
+						<p>Galleta de avena</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://cdn3.incapto.com/wp-content/uploads/2020/11/Vainilla-Latte.jpg"
+							alt="Latte de Vainilla">
+						<p>Latte de Vainilla</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://www.cocinavital.mx/wp-content/uploads/2017/09/chocolatefriook.jpg"
+							alt="Chocolate frio">
+						<p>Chocolate frio</p>
+					</div>
 				</div>
-				<div class = "productos">
-					<ul>
-					<h1><li>Aeropress<div class="precio">$50.00</div></li></h1>
-						Café hecho en manera artesanal en el Aeropress.
-						<br>
-					<h1><li>Cafe Mocha <div class="precio">$60.00</div></li></h1>
-						Espreso, chocolate y leche texturizada.
-						<br>
-					<h1><li>Chocolate Caliente<div class="precio">$60.00</div></li></h1>
-						Chocolate estilo oaxaqueno con leche texturizada.
-						<br>
-					<h1><li>Matcha Frio<div class="precio">$60.00</div></li></h1>
-						Matcha latte hecho con Matcha y un poquito endulzado.
-						<br>
-					<h1><li>Pudin de Chia<div class = "precio">$60.00</div></li></h1>
-						Pudin de chia con leche de coco, toque de miel y frutos rojos.
-						<br>
-					
-					</ul>
-				</div>
-				</div>
-			
-		<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-		<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-		<script src="app.js"></script>
-    </body>
+				<button aria-label="Siguiente" class="carousel__siguiente">
+					<i class="fas fa-chevron-right"></i>
+				</button>
+			</div>
+			<div role="tablist" class="carousel__indicadores"></div>
+		</div>
+		<div class="productos">
+			<ul>
+				<h1>
+					<li>Aeropress<div class="precio">$50.00</div>
+					</li>
+				</h1>
+				Café hecho en manera artesanal en el Aeropress.
+				<br>
+				<h1>
+					<li>Cafe Mocha <div class="precio">$60.00</div>
+					</li>
+				</h1>
+				Espreso, chocolate y leche texturizada.
+				<br>
+				<h1>
+					<li>Chocolate Caliente<div class="precio">$60.00</div>
+					</li>
+				</h1>
+				Chocolate estilo oaxaqueno con leche texturizada.
+				<br>
+				<h1>
+					<li>Matcha Frio<div class="precio">$60.00</div>
+					</li>
+				</h1>
+				Matcha latte hecho con Matcha y un poquito endulzado.
+				<br>
+				<h1>
+					<li>Pudin de Chia<div class="precio">$60.00</div>
+					</li>
+				</h1>
+				Pudin de chia con leche de coco, toque de miel y frutos rojos.
+				<br>
+			</ul>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
+</body>
+
 </html>
