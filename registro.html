@@ -5,11 +5,47 @@
             Registro
         </title>
     </head>
-    <link  href = "style.css" rel= "stylesheet">
+    <link  href = "style-ing.css" rel= "stylesheet">
     <body>
-        <div class ="contenedor">
-            <div class = "inicio" > <a href = "login.html" >Iniciar sesion</a></div>
-            <div class = "inicio" > <a href = "index.html"  >Regresar a la principal </a> </div>
-        </div>
-    </body>
-</html>
+            <div class="register" >
+                <form  action="mysuperscript.php" autocomplete="on"> 
+                <h1> Registro</h1> 
+                <p> 
+                    
+                    <input class = "controles" id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Nombre" />
+                </p>
+                <p>
+              
+                    <input class = "controles" id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Apellido Paterno" />
+                </p>
+                <p>
+                
+                    <input class = "controles" id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Apellido Materno" />
+                </p>
+                <p>
+          
+                    <input class = "controles" id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="Numero" />
+                </p>
+                <p> 
+                  
+                    <input class = "controles" id="emailsignup" name="emailsignup" required="required" type="email" placeholder="ejemplo@mail.com"/> 
+                </p>
+                <p> 
+                    <input class = "controles" id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="Contrasena" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Debe contener al menos un número y una letra minúscula y mayúscula, y al menos 8 o más caracteres"/> 
+                </p>
+                <p> 
+                    
+                    <input class = "controles" id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="Confirmar contrasena"/>
+                </p>
+                <input class = "boton" type="submit" name="Registro">
+                <P><a href="login.html" class="to_register"> Loguéate </a></P>
+                <p><a href ="index.html"> Ir al menu </a></p>
+                </form>
+                </div>
+                <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/jquery-1.11.2.min.js"></script>
+        <script src="assets/jquery.validate.min.js"></script>
+
+        <script src="register.js"></script>
+            </body>
+        </html>
