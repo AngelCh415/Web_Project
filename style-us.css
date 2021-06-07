@@ -7,5 +7,27 @@ body {
 .titulo{
     color: rgb(37, 40, 80);
     font-size: 50px;
+	text-align: center;
 }
-
+.button {
+	background:#7f8c8d;
+	color:#fff;
+	display:inline-block;
+	font-size:1.25em;
+	margin:20px;
+	padding:10px 0;
+	text-align:center;
+	width:200px;
+	text-decoration:none;
+	box-shadow:0px 3px 0px #373c3c;
+	float: right;
+}
+.button.blue {
+	background:#3498db;
+	box-shadow:0px 3px 0px #266792;
+	right: 30px;
+}
+.button:hover{
+	box-shadow: 0px 0px 0px;
+	padding-top: 7px;
+}
