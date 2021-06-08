@@ -6,14 +6,59 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.css">
     <link href="style-us.css" rel="stylesheet">
     <body>
-        <d class="encabezado">
+        <div class="encabezado">
             <div class="titulo"> Bienvenido Usuario</div>
                 <a href="#" class="button blue">
-                    <span class="icon-house"></span>Configuracion
+                    <i class="fas fa-tools"></i>
                 </a>            
                 <a href="#" class="button blue">
-                    <span class="icon-house"></span>Carrito
-                </a>  
+                    <i class="fas fa-cart-arrow-down"></i>
+                </a> 
+                <a href="#" class="button blue">
+                    <i class="fas fa-user-circle"></i>
+                </a> 
         </div>
+        <br><br><br>
+        <div class="carousel">
+			<div class="carousel__contenedor">
+				<button aria-label="Anterior" class="carousel__anterior">
+					<i class="fas fa-chevron-left"></i>
+				</button>
+				<div class="carousel__lista">
+					<div class="carousel__elemento">
+						<img src="https://placeralplato.com/files/2016/07/Bagels-de-salmn-e1468696119574.jpg"
+							alt="Bagel de Salmon">
+						<p>Bagel de Salmon</p>
+					</div>
+					<div class="carousel_elemento">
+						<img src="https://img-global.cpcdn.com/recipes/a3c468ee4fba77d2/751x532cq70/hamburguesa-bbq-con-aros-de-cebolla-foto-principal.jpg"
+							alt="Hamburguesa BBQ">
+						<p>Hambuerguesa BBQ</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://www.cocinaabuenashoras.com/files/galletas-de-avena-monton-768x431.jpg"
+							alt="Galleta de avena">
+						<p>Galleta de avena</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://cdn3.incapto.com/wp-content/uploads/2020/11/Vainilla-Latte.jpg"
+							alt="Latte de Vainilla">
+						<p>Latte de Vainilla</p>
+					</div>
+					<div class="carousel__elemento">
+						<img src="https://www.cocinavital.mx/wp-content/uploads/2017/09/chocolatefriook.jpg"
+							alt="Chocolate frio">
+						<p>Chocolate frio</p>
+					</div>
+				</div>
+				<button aria-label="Siguiente" class="carousel__siguiente">
+					<i class="fas fa-chevron-right"></i>
+				</button>
+			</div>
+			<div role="tablist" class="carousel__indicadores"></div>
+		</div>
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
     </body>
 </html>
