@@ -116,3 +116,10 @@ body {
 	}
 }
 
+.pago{
+	text-align: left;
+	font-size: 30px;
+}
+.nuevo_saldo{
+	color: green;
+}
