@@ -22,6 +22,31 @@ body {
 	box-shadow:0px 3px 0px #373c3c;
 	float: right;
 }
+
+.confi_usua{
+	font-size: 30px;
+	text-align: center;
+}
+.saldo{
+	color: forestgreen;
+	font-size: 50px;
+}
+.cambios{
+	float: left;
+	background:#3498db;
+	box-shadow:0px 3px 0px #266792;
+	right: 30px;
+}
+.cambio_contra{
+	background:#3498db;
+	box-shadow:0px 3px 0px #266792;
+	right: 30px;
+}
+.agregar_saldo{
+	float: right;background:#3498db;
+	box-shadow:0px 3px 0px #266792;
+	right: 30px;
+}
 .button.blue {
 	background:#3498db;
 	box-shadow:0px 3px 0px #266792;
