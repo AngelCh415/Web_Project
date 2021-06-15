@@ -5,19 +5,33 @@
     <title>
         Login
     </title>
-</head>
+    <meta charset="utf-8">
 <link href="./../css/style-login.css" rel="stylesheet">
-<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<!--<link href="./../materialize/css/materialize.min.css" rel="stylesheet">-->
+<link href="./../jscript/plugins/validetta101/validetta.min.css" rel="stylesheet">
+<link href="./../jscript/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
+<!--<link href="./../css/general.css" rel="stylesheet">-->
+<script src="./../jscript/jquery-3.6.0.min.js"></script>
+<!--<script src="./../materialize/js/materialize.min.js"></script>-->
+<script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
+<script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
+<script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
+<script src="./../jscript/login.js"></script>
+</head>
+
 <body>
     <section class="Login">
         <h5>Login</h5>
-        <input class="controles" type="text" name="usuario" value="" placeholder="Usuario">
-        <input class="controles" type="password" name="contrasena" value="" placeholder="Contrasena">
+        <form id="formLogin" autocomplete="on">
+            <input class="controles" type="text" id="correo" name="correo" placeholder="Correo" data-validetta="required,email">
+            <input class="controles" type="password" id="contrasena" name="contrasena" placeholder="Contrasena" data-validetta="required,minLength[8]">
+            <button type="submit" class="boton" style="width:100%;">Ingresar</button>
+            <p><a href="./registro.html"> Registrarse </a></p>
+            <p><a href="./../index.html"> Ir al menú </a></p>
+            <p><a href=""> Olvidé mi contraseña </a></p>
+        </form>
         
-        <button class="boton" ><a href="usuario.html">Ingresar</a></button>
-        <p><a href="./registro.html"> Crear Usuario </a></p>
-        <p><a href="./../index.html"> Ir al menu </a></p>
-        <p><a href=""> Contrasena olvidada </a></p>
     </section>
 </body>
 
