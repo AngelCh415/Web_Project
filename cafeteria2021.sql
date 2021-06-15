@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2021 a las 19:25:09
+-- Tiempo de generación: 16-06-2021 a las 00:35:36
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.4.18
 
@@ -164,11 +164,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `contrasena`, `tipo`, `saldo`, `auditoria`) VALUES
-(1, 'Administrador', 'maildelproyectocafe@gmail.com', 'patitasGrises34', 0, NULL, '2021-06-15 11:22:37'),
-(2, 'Cocinero', 'kitchen1@gmail.com', 'Qwerty', 1, NULL, '2021-06-15 11:23:29'),
-(3, 'Juan García', 'benvadam@gmail.com', '12345678', 2, 300, '2021-06-15 11:24:27'),
-(4, 'Fernando Diosdado', 'thelvadam@outlook.com', '12345678', 2, 0, '2021-06-15 11:25:25'),
-(5, 'Mauricio García', 'correo@correo.com', '12345678', 2, 24, '2021-06-15 11:26:22');
+(1, 'Administrador', 'maildelproyectocafe@gmail.com', 'c3fb70e0148b844856fa9d1674ffaf4e', 0, NULL, '2021-06-15 11:22:37'),
+(2, 'Cocinero', 'kitchen1@gmail.com', 'acbd9ab2f68bea3f5291f825416546a1', 1, NULL, '2021-06-15 11:23:29'),
+(3, 'Juan García', 'benvadam@gmail.com', '25d55ad283aa400af464c76d713c07ad', 2, 300, '2021-06-15 11:24:27'),
+(4, 'Fernando Diosdado', 'thelvadam@outlook.com', '25d55ad283aa400af464c76d713c07ad', 2, 0, '2021-06-15 11:25:25'),
+(5, 'Mauricio García', 'correo@correo.com', '25d55ad283aa400af464c76d713c07ad', 2, 24, '2021-06-15 11:26:22');
 
 --
 -- Índices para tablas volcadas
