@@ -15,7 +15,7 @@ $(document).ready(function(){
           let tipo;
           if(AX.codigo == 1) tipo = "green"; else tipo = "red";
           $.alert({
-            title:"<h3>TWeb 2021/2</h3>",
+            title:"<h3>Cafetería ESCOM 2021</h3>",
             content:AX.msj,
             type:tipo,
             icon:"fas fa-info-circle fa-2x",
@@ -23,7 +23,7 @@ $(document).ready(function(){
             useBootstrap: false,
             onDestroy:function(){
               if(AX.codigo == 1)
-                window.location.href = "./login.html";
+                window.location.href = "./registro_credito.html";
             }
           });
         }
