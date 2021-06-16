@@ -1,4 +1,6 @@
 <?php
+        session_start();
+
         use PHPMailer\PHPMailer\PHPMailer;
         use PHPMailer\PHPMailer\SMTP;
         use PHPMailer\PHPMailer\Exception;
@@ -15,6 +17,8 @@
         $sqlCheckCorreo = "SELECT * FROM usuarios WHERE correo = '$correo'";
         $resUsuario = mysqli_query($conexion, $sqlCheckCorreo);
         $infUsuario = mysqli_fetch_row($resUsuario);
+
+        $_SESSION["recuperacionContrasena"] = $correo; 
         
         /* ********************************** */
     

@@ -6,7 +6,7 @@ $(document).ready(function(){
         onValid:function(e){
             e.preventDefault();
             let correo = document.getElementById("correo").value;
-            window.location.href = "./recuperar_AX.php?correo="+correo;
+            window.location.href = "./recuperar.php?correo="+correo;
         }
     });
 });
