@@ -70,7 +70,7 @@
 
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
-        $mail->msgHTML("<h3>Cafetería ESCOM 2021.</h3><p>Hola $infUsuario[1].<br><br>Ingresa al siguiente link para recuperar tu contraseña.<br><br><a href='http://localhost/Web_semestre/Cafeter%C3%ADa/pages/crearNuevaContrasena.html'>Nueva contraseña</a><br>Atte. Administración.</p>");
+        $mail->msgHTML("<h3>Cafetería ESCOM 2021.</h3><p>Hola $infUsuario[1].<br><br>Ingresa al siguiente link para recuperar tu contraseña.<br><br><a href='http://localhost/Web_semestre/Web_Project/pages/crearNuevaContrasena.html'>Nueva contraseña</a><br>Atte. Administración.</p>");
     
         //Replace the plain text body with one created manually
         $mail->AltBody = 'Cafetería ESCOM 2021. Recupere su contraseña.';
