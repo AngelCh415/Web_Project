@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        Login
+    Recuperar contraseña
     </title>
     <meta charset="utf-8">
 <link href="./../css/style-login.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/login.js"></script>
+<script src="./../jscript/validacion.js"></script>
 </head>
 
 <body>
@@ -25,11 +25,7 @@
         <h5>Login</h5>
         <form id="formLogin" autocomplete="on">
             <input class="controles" type="text" id="correo" name="correo" placeholder="Correo" data-validetta="required,email">
-            <input class="controles" type="password" id="contrasena" name="contrasena" placeholder="Contrasena" data-validetta="required,minLength[8]">
-            <button type="submit" class="boton" style="width:100%;">Ingresar</button>
-            <p><a href="./registro.html"> Registrarse </a></p>
-            <p><a href="./../index.html"> Ir al menú </a></p>
-            <p><a href="./recuperar.html"> Olvidé mi contraseña </a></p>
+            <button type="submit" class="boton" style="width:100%;">Enviar codigo de recuperacion</button>
         </form>
         
     </section>
