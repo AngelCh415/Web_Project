@@ -24,8 +24,9 @@
     
         //Create a new PHPMailer instance
         $mail = new PHPMailer();
-    
-        //Tell PHPMailer to use SMTP
+
+        if(mysqli_num_rows($resUsuario) == 1){
+            //Tell PHPMailer to use SMTP
         $mail->isSMTP();
     
         //Enable SMTP debugging
@@ -80,7 +81,7 @@
     
         //send the message, check for errors
         if (!$mail->send()) {
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
+            echo 'No se pudo enviar el correo, favor de intentar de nuevo';
         } else {
             echo 'El enlace ha sido enviado a tu correo, puedes cerrar esta pestaña.';
             //Section 2: IMAP
@@ -89,4 +90,11 @@
             #    echo "Message saved!";
             #}
         }
+        } else{
+            $html = "<br><a href='http://localhost/Web_semestre/Web_Project/pages/recuperar.html'>";
+            echo 'Correo no válido, favor de intentar de nuevo';
+            echo "<br><a href='http://localhost/Web_semestre/Web_Project/pages/recuperar.html'>";
+        }
+
+        
 ?>
