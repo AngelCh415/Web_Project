@@ -91,9 +91,7 @@
             #}
         }
         } else{
-            $html = "<br><a href='http://localhost/Web_semestre/Web_Project/pages/recuperar.html'>";
-            echo 'Correo no válido, favor de intentar de nuevo';
-            echo "<br><a href='http://localhost/Web_semestre/Web_Project/pages/recuperar.html'>";
+            echo "<br>Correo no válido, favor de intentar de nuevo <br><a href='http://localhost/Web_semestre/Web_Project/pages/recuperar.html'>Recuperar contraseña</a>";
         }
 
         
