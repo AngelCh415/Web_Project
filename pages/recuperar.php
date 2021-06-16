@@ -67,7 +67,7 @@
         $mail->addAddress($infUsuario[2], $infUsuario[1]);
     
         //Set the subject line
-        $mail->Subject = 'Recuperación de contraseña - Cafetería ESCOM 2021';
+        $mail->Subject = 'Recuperacion de contraseña - Cafeteria ESCOM 2021';
 
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
