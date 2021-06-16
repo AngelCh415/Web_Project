@@ -10,13 +10,7 @@
     $info = mysqli_num_rows($resultado);
     $usuario = mysqli_fetch_row($resultado);
     $respAX = array();
-    if($info == 1){
-        $respAX["codigo"] = 1;
-        $to = $correo;
-        $subject = "Correo de recuperacion";
-        $message = mt_srand(10);
-        mail($to, $subject, $message);
-    }
+    //Aqui va el codigo para el correo 
 
     echo json_encode($respAX);
 ?>
