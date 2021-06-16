@@ -5,7 +5,7 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
+    background-color: white;
 }
 .Login{
     width: 400px;
@@ -31,7 +31,7 @@ body{
     border: 1px solid #017bab;
     margin-bottom: 15px;
     padding: 11px 10px;
-    background: #252323;
+    background: gray;
     font-size: 14px;
     font-weight: bold;
 }
