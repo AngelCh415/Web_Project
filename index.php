@@ -1,5 +1,6 @@
 <?php
     session_start();
+
     if($_SESSION==null)
         $sesion=false;
     else    
@@ -8,27 +9,165 @@
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
     mysqli_set_charset($conexion,"utf8");
 
-    $sqlInventario = "SELECT * FROM inventario";
-    $resInventario = mysqli_query($conexion,$sqlInventario);
-    $trInventario = "";
-    while($filas=mysqli_fetch_array($resInventario,2)){
-        $trInventario .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]'/></td>
-            <td>
-                $filas[1]
-            </td>
-            <td>
-                $filas[2]
-            </td>
-            <td>
-                $$filas[4]
-            </td>
+    $sqlInventarioCafe = "SELECT * FROM inventario WHERE categoria = 'Café'";
+    $resInventarioCafe = mysqli_query($conexion,$sqlInventarioCafe);
+    $trInventarioCafe = "";
+    while($filas=mysqli_fetch_array($resInventarioCafe,2)){
+        $trInventarioCafe .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventario.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioCafe.="<i class='fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventario.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioCafe.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
-        $trInventario .="</td>
+        $trInventarioCafe .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioBCalientes = "SELECT * FROM inventario WHERE categoria = 'Bebidas Calientes'";
+    $resInventarioBCalientes = mysqli_query($conexion,$sqlInventarioBCalientes);
+    $trInventarioBCalientes = "";
+    while($filas=mysqli_fetch_array($resInventarioBCalientes,2)){
+        $trInventarioBCalientes .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioBCalientes.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioBCalientes.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioBCalientes .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioMArtesanales = "SELECT * FROM inventario WHERE categoria = 'Métodos Artesanales'";
+    $resInventarioMArtesanales = mysqli_query($conexion,$sqlInventarioMArtesanales);
+    $trInventarioMArtesanales = "";
+    while($filas=mysqli_fetch_array($resInventarioMArtesanales,2)){
+        $trInventarioMArtesanales .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioMArtesanales.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioMArtesanales.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioMArtesanales .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioBFrias = "SELECT * FROM inventario WHERE categoria = 'Bebidas Frías'";
+    $resInventarioBFrias = mysqli_query($conexion,$sqlInventarioBFrias);
+    $trInventarioBFrias = "";
+    while($filas=mysqli_fetch_array($resInventarioBFrias,2)){
+        $trInventarioBFrias .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioBFrias.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioBFrias.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioBFrias .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioPostres = "SELECT * FROM inventario WHERE categoria = 'Postres'";
+    $resInventarioPostres = mysqli_query($conexion,$sqlInventarioPostres);
+    $trInventarioPostres = "";
+    while($filas=mysqli_fetch_array($resInventarioPostres,2)){
+        $trInventarioPostres .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioPostres.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioPostres.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioPostres .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioPanquesGalletasScones = "SELECT * FROM inventario WHERE categoria = 'Panqués-Galletas-Scones'";
+    $resInventarioPanquesGalletasScones = mysqli_query($conexion,$sqlInventarioPanquesGalletasScones);
+    $trInventarioPanquesGalletasScones = "";
+    while($filas=mysqli_fetch_array($resInventarioPanquesGalletasScones,2)){
+        $trInventarioPanquesGalletasScones .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioPanquesGalletasScones.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioPanquesGalletasScones.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioPanquesGalletasScones .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioSandwiches = "SELECT * FROM inventario WHERE categoria = 'Sandwiches'";
+    $resInventarioSandwiches = mysqli_query($conexion,$sqlInventarioSandwiches);
+    $trInventarioSandwiches = "";
+    while($filas=mysqli_fetch_array($resInventarioSandwiches,2)){
+        $trInventarioSandwiches .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioSandwiches.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioSandwiches.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioSandwiches .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioCafeGrano = "SELECT * FROM inventario WHERE categoria = 'Café en grano-Para casa'";
+    $resInventarioCafeGrano = mysqli_query($conexion,$sqlInventarioCafeGrano);
+    $trInventarioCafeGrano = "";
+    while($filas=mysqli_fetch_array($resInventarioCafeGrano,2)){
+        $trInventarioCafeGrano .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioCafeGrano.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioCafeGrano.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioCafeGrano .="</td>
+        </tr>";
+    }
+
+    $sqlInventarioHamburguesas = "SELECT * FROM inventario WHERE categoria = 'Hamburguesas'";
+    $resInventarioHamburguesas = mysqli_query($conexion,$sqlInventarioHamburguesas);
+    $trInventarioHamburguesas = "";
+    while($filas=mysqli_fetch_array($resInventarioHamburguesas,2)){
+        $trInventarioHamburguesas .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]' class='circle responsive-img'/></td>
+            <td>$filas[1]</td>
+            <td>$filas[2]</td>
+            <td>$$filas[4]</td>
+            <td>";
+        if($sesion)
+            $trInventarioHamburguesas.="<i class='fas fa-cart-plus addCarrito'></i>";
+        else
+            $trInventarioHamburguesas.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+                
+        $trInventarioHamburguesas .="</td>
         </tr>";
     }
 ?>
@@ -71,6 +210,18 @@
   main {
     flex: 1 0 auto;
   }
+
+  @media (max-width: 992px) {
+  .productos1 {
+    display: none;
+  }
+  }
+  @media (min-width: 993px) {
+  .productos2 {
+    display: none;
+  }
+  }
+
 </style>
 <script src="./jscript/jquery-3.6.0.min.js"></script>
 <script src="./materialize/js/materialize.min.js"></script>
@@ -111,7 +262,7 @@
     <div class="navbar-fixed">
     <nav class="brown lighten-1">
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo"><img src="./img/cafeLogo50.png">      &emsp;Cafetería ESCOM</a>
+        <a href="#!" class="brand-logo"><img src="./img/cafeLogo50.png"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
@@ -123,10 +274,10 @@
     </nav> <!-- /menu -->
     </div>
     <ul class="sidenav" id="mobile-demo">
-		<li><a href="./pages/login.html">Iniciar sesión</a></li>
-		<li><a href="./pages/registro.html">Crear cuenta</a></li>
-		<li><a href="">Ver perfil</a></li>
-		<li><a href="">Carrito</a></li>
+          <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
+          <li><a href="./pages/registro.html">Crear cuenta</a></li>
+          <li><a href="">Ver perfil</a></li>
+          <li><a href="">Carrito</a></li>
     </ul> <!-- /menu mobile-->
   </header>
 
@@ -135,10 +286,10 @@
     <div class="slider">
       <ul class="slides">
         <li>
-          <img src="./img/Carrusel/Arroz-3-leches.jpg"> <!-- random image -->
+          <img src="./img/Carrusel/Cafeteria-local.jpg"> <!-- random image -->
           <div class="caption center-align">
-            <h3>Postres!</h3>
-            <h5 class="light grey-text text-lighten-3">Arroz con leche</h5>
+            <h3>Bienvenido a cafetería ESCOM</h3>
+            <h5 class="light grey-text text-lighten-3">¡Estamos a tu servicio!</h5>
           </div>
         </li>
         <li>
@@ -166,27 +317,224 @@
     </div> <!-- /slider -->
 
     <div class="container">
-		<div class="productos">
-        <table class="centered striped highlight responsive-table">
-                    <thead>
-                        <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th></th></tr>
-                    </thead>
-                    <tbody>
-                        <?php echo $trInventario;?>
-                    </tbody>
-                </table>
-		</div>
+		<div class="productos1">
+      <h1 style="text-align:center;">CAFÉ</h1>
+      <h1 style="text-align:center;"></h1>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioCafe;?>
+            </tbody>
+        </table>
+      
+        <h1 style="text-align:center;">BEBIDAS CALIENTES</h1>
+      <h5 style="text-align:center;">BEBIDAS RICAS Y SANAS</h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioBCalientes;?>
+            </tbody>
+        </table>
+
+        <h1 style="text-align:center;">METODOS ARTESANALES</h1>
+      <h5 style="text-align:center;">BEBIDAS PREPARADAS CON PRECISIÓN Y CUIDADO DE NUESTROS BARISTAS</h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioMArtesanales;?>
+            </tbody>
+        </table>
+
+        <h1 style="text-align:center;">BEBIDAS FRÍAS</h1>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioBFrias;?>
+            </tbody>
+        </table>
+
+        <h1 style="text-align:center;">POSTRES</h1>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioPostres;?>
+            </tbody>
+        </table>
+
+        <h1 style="text-align:center;">PANQUÉS / GALLETAS / SCONES</h1>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioPanquesGalletasScones;?>
+            </tbody>
+        </table>
+
+        <h1 style="text-align:center;">SANDWICHES</h1>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioSandwiches;?>
+            </tbody>
+        </table>
+
+        <h1 style="text-align:center;">CAFÉ EN GRANO / PARA LA CASA</h1>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioCafeGrano;?>
+            </tbody>
+        </table>
+
+        <h1 style="text-align:center;">HAMBURGUESAS</h1>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioHamburguesas;?>
+            </tbody>
+        </table>
+
 	</div>
-    </div> <!-- /container-->
+	</div>
+
+  <div class="container">
+		<div class="productos2">
+    <h3 style="text-align:center;">CAFÉ</h3>
+      <h1 style="text-align:center;"></h1>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioCafe;?>
+            </tbody>
+        </table>
+      
+        <h3 style="text-align:center;">BEBIDAS CALIENTES</h3>
+      <h5 style="text-align:center;">BEBIDAS RICAS Y SANAS</h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioBCalientes;?>
+            </tbody>
+        </table>
+
+        <h3 style="text-align:center;">METODOS ARTESANALES</h3>
+      <h5 style="text-align:center;">BEBIDAS PREPARADAS CON PRECISIÓN Y CUIDADO DE NUESTROS BARISTAS</h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioMArtesanales;?>
+            </tbody>
+        </table>
+
+        <h3 style="text-align:center;">BEBIDAS FRÍAS</h3>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioBFrias;?>
+            </tbody>
+        </table>
+
+        <h3 style="text-align:center;">POSTRES</h3>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioPostres;?>
+            </tbody>
+        </table>
+
+        <h3 style="text-align:center;">PANQUÉS / GALLETAS / SCONES</h3>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioPanquesGalletasScones;?>
+            </tbody>
+        </table>
+
+        <h3 style="text-align:center;">SANDWICHES</h3>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioSandwiches;?>
+            </tbody>
+        </table>
+
+        <h3 style="text-align:center;">CAFÉ EN GRANO / PARA LA CASA</h3>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioCafeGrano;?>
+            </tbody>
+        </table>
+
+        <h3 style="text-align:center;">HAMBURGUESAS</h3>
+      <h5 style="text-align:center;"></h5>
+        <table class="centered striped centered responsive-table">
+            <thead>
+                <tr><th><br><br>Imagen<br><br><br></th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
+            </thead>
+            <tbody>
+                <?php echo $trInventarioHamburguesas;?>
+            </tbody>
+        </table>
+        
+	</div>
+	</div>
+  </div> <!-- /container-->
   </main>
 
 
   <footer class="page-footer brown lighten-1">
     <div class="container">
-      <!--<div class="row">-->
-        <div class="col l6 s12 center-align">
-          <h5 class="white-text">Contacto</h5>
-          <p class="grey-text text-lighten-4">Envianos tus comentarios y/o sugerencias</p>
+      <div class="row">
+      <div class="col s12 m4 l2"><p></p></div>
+        <div class="col s12 m12 l8 center-align">
+          <h5 class="white-text">Gracias por su preferencia :)</h5>
+          <!--
+            <p class="grey-text text-lighten-4">Dinos en qué podemos ayudarte</p>
           <div class="row">
             <form id="formContacto" autocomplete="off">
               <div class="input-field">
@@ -208,7 +556,10 @@
               <button type="submit" class="btn brown" style="width: 100%;">Enviar</button>
             </form>
           </div>
+          -->
         </div>
+        
+        <div class="col s12 m4 l2"><p></p></div>
         <!--
 		<div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
@@ -218,7 +569,7 @@
           </ul>
         </div>
 		-->
-      <!--</div>-->
+    </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
