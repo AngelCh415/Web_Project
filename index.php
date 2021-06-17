@@ -12,7 +12,7 @@
     $resInventario = mysqli_query($conexion,$sqlInventario);
     $trInventario = "";
     while($filas=mysqli_fetch_array($resInventario,2)){
-        $trInventario .= "<tr><td><img src='$filas[5]' alt='Imagen $filas[1]'/></td>
+        $trInventario .= "<tr><td><img src='./img/$filas[7]/$filas[5].jpg' alt='Imagen $filas[1]'/></td>
             <td>
                 $filas[1]
             </td>
