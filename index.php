@@ -1,10 +1,6 @@
 <?php
     session_start();
-
-    if($_SESSION==null)
-        $sesion=false;
-    else    
-        $sesion=true;
+    $sesion = isset($_SESSION["login"]);
 
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
     mysqli_set_charset($conexion,"utf8");
@@ -266,18 +262,20 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
-          <li><a href="./pages/registro.html">Crear cuenta</a></li>
-          <li><a href="">Ver perfil</a></li>
-          <li><a href="">Carrito</a></li>
+          <li><a href='<?php if($sesion) echo "./pages/config_usuario.html"; else echo "./pages/registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
+          <li><a href='<?php if($sesion) echo "./pages/carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></li>
+          <!--<li><a href="">Ver perfil</a></li>
+          <li><a href="">Carrito</a></li>-->
         </ul>
       </div>
     </nav> <!-- /menu -->
     </div>
     <ul class="sidenav" id="mobile-demo">
           <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
-          <li><a href="./pages/registro.html">Crear cuenta</a></li>
-          <li><a href="">Ver perfil</a></li>
-          <li><a href="">Carrito</a></li>
+          <li><a href='<?php if($sesion) echo "./pages/config_usuario.html"; else echo "./pages/registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
+          <li><a href='<?php if($sesion) echo "./pages/carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
+          <!--<li><a href="">Ver perfil</a></li>
+          <li><a href="">Carrito</a></li>-->
     </ul> <!-- /menu mobile-->
   </header>
 
