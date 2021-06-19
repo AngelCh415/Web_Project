@@ -196,78 +196,13 @@
 <link href="./materialize/css/materialize.min.css" rel="stylesheet">
 <link href="./jscript/plugins/validetta101/validetta.min.css" rel="stylesheet">
 <link href="./jscript/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
-<style>
-  .justificado{
-    text-align: justify;
-  }
-
-  .pieImg{
-    font-size: smaller;
-  }
-
-  .input-field label {
-    color: #FFF;
-  }
-
-  .titAzul{
-    color: #006699;
-  }
-
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-
-  @media (max-width: 992px) {
-  .productos1 {
-    display: none;
-  }
-  }
-  @media (min-width: 993px) {
-  .productos2 {
-    display: none;
-  }
-  }
-
-</style>
+<link href="./css/index.css" rel="stylesheet"/>
 <script src="./jscript/jquery-3.6.0.min.js"></script>
 <script src="./materialize/js/materialize.min.js"></script>
 <script src="./jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.slider').slider();
-    $("#formContacto").validetta({
-      bubblePosition: 'bottom',
-      bubbleGapTop: 10,
-      bubbleGapLeft: -5,
-      onValid:function(){
-        event.preventDefault();
-        $.alert({
-          title:"TWeb 2021-2",
-          icon:"fas fa-code",
-          theme:"material",
-          boxWidth: '30%',
-          useBootstrap: false,
-          type: "red",
-          content:"<p class='center-align blue'>Validaciones OK</p>",
-          onDestroy:function(){
-            location.reload();
-          }
-        });
-      }
-    });
-
-  
-  });
-</script>
+<script src="./jscript/index.js"></script>
 </head>
 <body>
   <header>

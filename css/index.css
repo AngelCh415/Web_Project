@@ -1,0 +1,36 @@
+.justificado{
+    text-align: justify;
+  }
+
+  .pieImg{
+    font-size: smaller;
+  }
+
+  .input-field label {
+    color: #FFF;
+  }
+
+  .titAzul{
+    color: #006699;
+  }
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  @media (max-width: 992px) {
+  .productos1 {
+    display: none;
+  }
+  }
+  @media (min-width: 993px) {
+  .productos2 {
+    display: none;
+  }
+  }
