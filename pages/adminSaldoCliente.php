@@ -48,7 +48,7 @@
 <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/nuevoSaldoCliente.js"></script>
+<script src="./../jscript/adminSaldoCliente.js"></script>
 
 </head>
 

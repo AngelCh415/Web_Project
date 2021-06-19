@@ -34,7 +34,7 @@ $(document).ready(function(){
                             buttons: {
                                 Si: function () {//si lo confirma vamos a esta función, el Si es el texto que pondrá en el botón
                                     $.ajax({
-                                        url:"./saldoCliente_AX.php",
+                                        url:"./adminSaldoCliente_AX.php",
                                         method:"post",
                                         data:{correo:correo,saldo:saldo},
                                         cache:false,
