@@ -20,12 +20,9 @@
         while($filas = mysqli_fetch_array($resAlumnos, MYSQLI_BOTH )){ 
             $trAlumnos .= "<tr>
                 <td>$filas[1]</td>
-                <td>$$filas[4]</td>
+                <td>$$filas[5]</td>
                 <td>
-                    <form class='formSaldo' autocomplete='off'>
-                    <input type='text' id='saldo' name='saldo' data-validetta='required,number'>
-                    <i type='submit' class='btn brown lighten-2 white-text text-darken-1 aumentarSaldo' data-correo='$filas[2]'> <i class='fas fa-dollar-sign fa-2x white-text text-darken-1'></i> Aumentar Saldo <i class='fas fa-dollar-sign fa-2x white-text text-darken-1'></i></i>
-                    </form>
+                    <i class='fas fa-dollar-sign fa-2x black-text text-darken-3 aumentarSaldo' data-correo='$filas[2]'></i>
                 </td>
             </tr>";
         }
@@ -51,8 +48,8 @@
 <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/index.js"></script>
-<script src="./../jscript/saldoCliente.js"></script>
+<script src="./../jscript/nuevoSaldoCliente.js"></script>
+
 </head>
 
 <body>
@@ -82,7 +79,7 @@
                 <table class="centered striped responsive-table">
                     <thead>
                         <!--- los encabezados de la tabla--->
-                        <tr><th>Nombre</th><th>Saldo</th><th>Opciones</th>
+                        <tr><th>Nombre</th><th>Saldo</th><th>Añadir saldo</th>
                     </thead>
                     <tbody>
                         <?php echo $trAlumnos; ?>
