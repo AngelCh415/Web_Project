@@ -284,31 +284,31 @@
     <div class="slider">
       <ul class="slides">
         <li>
-          <img src="./img/Carrusel/Cafeteria-local.jpg"> <!-- random image -->
+          <img src="./img/Carrusel/cafeteria.jpg"> <!-- random image -->
           <div class="caption center-align">
-            <h3>Bienvenido a cafetería ESCOM</h3>
+            <h3><strong>Bienvenido a cafetería ESCOM</strong></h3>
             <h5 class="light grey-text text-lighten-3">¡Estamos a tu servicio!</h5>
           </div>
         </li>
         <li>
-          <img src="./img/Carrusel/chai-masala.jpg"> <!-- random image -->
+          <img src="./img/Carrusel/cafe.jpg"> <!-- random image -->
           <div class="caption left-align">
-            <h3>Bebidas frías!</h3>
-            <h5 class="light grey-text text-lighten-3">Chai masala</h5>
+            <h2><strong>El mejor café para ti!</strong></h2>
+            
           </div>
         </li>
         <li>
-          <img src="./img/Carrusel/ciabatta-queso-cabra.jpg"> <!-- random image -->
+          <img src="./img/Carrusel/postres.jpg"> <!-- random image -->
           <div class="caption right-align">
-            <h3>Aperitivos!</h3>
-            <h5 class="light grey-text text-lighten-3">Ciabatta</h5>
+            <h3><strong>Postres!</strong></h3>
+            
           </div>
         </li>
         <li>
-          <img src="./img/Carrusel/hamburguesa-bbq.jpg"> <!-- random image -->
+          <img src="./img/Carrusel/comida.jpg"> <!-- random image -->
           <div class="caption center-align">
-            <h3>Comida!</h3>
-            <h5 class="light grey-text text-lighten-3">Hamburguesa</h5>
+            <h3><strong>Deliciosa comida!</strong></h3>
+            
           </div>
         </li>
       </ul>
@@ -531,6 +531,8 @@
       <div class="col s12 m4 l2"><p></p></div>
         <div class="col s12 m12 l8 center-align">
           <h5 class="white-text">Gracias por su preferencia :)</h5>
+          <h8 class="white-text">Visítanos en: </h8><br>
+          <h8 class="white-text">Alarii 317, Barrio del Niño, 71250 Villa de Zaachila, Oax.</h8>
           <!--
             <p class="grey-text text-lighten-4">Dinos en qué podemos ayudarte</p>
           <div class="row">
