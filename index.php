@@ -15,9 +15,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioCafe.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioCafe.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioCafe.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioCafe.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioCafe .="</td>
         </tr>";
@@ -33,9 +33,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioBCalientes.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioBCalientes.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioBCalientes.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioBCalientes.="<a class='btn brown' src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioBCalientes .="</td>
         </tr>";
@@ -51,9 +51,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioMArtesanales.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioMArtesanales.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioMArtesanales.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioMArtesanales.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioMArtesanales .="</td>
         </tr>";
@@ -69,9 +69,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioBFrias.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioBFrias.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioBFrias.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioBFrias.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioBFrias .="</td>
         </tr>";
@@ -87,9 +87,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioPostres.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioPostres.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioPostres.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioPostres.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioPostres .="</td>
         </tr>";
@@ -105,9 +105,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioPanquesGalletasScones.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioPanquesGalletasScones.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioPanquesGalletasScones.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioPanquesGalletasScones.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioPanquesGalletasScones .="</td>
         </tr>";
@@ -123,9 +123,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioSandwiches.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioSandwiches.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioSandwiches.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioSandwiches.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioSandwiches .="</td>
         </tr>";
@@ -141,9 +141,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioCafeGrano.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioCafeGrano.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioCafeGrano.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioCafeGrano.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioCafeGrano .="</td>
         </tr>";
@@ -159,14 +159,19 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioHamburguesas.="<i class='fas fa-cart-plus addCarrito'></i>";
+            $trInventarioHamburguesas.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
         else
-            $trInventarioHamburguesas.="<a src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioHamburguesas.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioHamburguesas .="</td>
         </tr>";
     }
 ?>
+
+<!--*******************************
+          Inicio de HTML
+*********************************-->
+
 <!DOCTYPE html>
 <html>
 <head>
