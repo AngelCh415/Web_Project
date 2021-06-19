@@ -272,7 +272,6 @@
     
     <div class="container">
 		<div class="productos1">
-    <?php echo $sesion;?>
       <h1 style="text-align:center;">CAFÉ</h1>
       <h1 style="text-align:center;"></h1>
         <table class="centered striped centered responsive-table">

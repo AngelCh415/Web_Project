@@ -133,27 +133,27 @@
             <h4 class="black-text center"><i class="fas fa-user"></i> Clientes</h4>
             <div class="row">
                 <div class="col s12 m6 l6 push-l3 push-m3">
-                    <a href="./login.html" class="btn white black-text" style="width:100%;"><i></i>Ingresar saldo</a>
+                    <a href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i>Ingresar saldo</a>
                 </div>
             </div>
             <br>
             <h4 class="black-text center"><i class="fas fa-list"></i> Inventario y pedidos</h4>
             <div class="row">
                 <div class="col s12 m6 l6">
-                    <a href="./login.html" class="btn white black-text" style="width:100%;"><i></i> Manejar inventario</a>
+                    <a href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i> Manejar inventario</a>
                 </div>
                 <div class="col s12  m6 l6">
-                    <a href="./login.html" class="btn brown" style="width:100%;"><i></i>Ver pedidos</a>
+                    <a href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i>Ver pedidos</a>
                 </div>
             </div>
             <br>
             <h4 class="black-text center"><i class="fas fa-print"></i> Reportes diarios</h4>
             <div class="row">
                 <div class="col s12 m6 l6">
-                    <button href="./login.html" class="btn brown" style="width:100%;"><i></i>Ver reporte en PDF</button>
+                    <button href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i>Ver reporte en PDF</button>
                 </div>
                 <div class="col s12  m6 l6">
-                    <button href="./login.html" class="btn white black-text" style="width:100%;"><i></i>Guardar reporte</button>
+                    <button href="./login.html" class="btn brown lighten-1 white-text" style="width:100%;"><i></i>Guardar reporte</button>
                 </div>
             </div>
         
@@ -168,7 +168,7 @@
         <div class="footer-copyright">
         <div class="container">
         © 2021 Copyright
-        <a class="grey-text text-lighten-4 right" href="./index.php">Cafetería ESCOM</a>
+        <a class="grey-text text-lighten-4 right" href="./../index.php">Cafetería ESCOM</a>
         </div>
         </div>
     </footer>
