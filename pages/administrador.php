@@ -130,14 +130,14 @@
 
     <main class="valign-wrapper">
         <div class="container">
-            <h4 class="black-text center"><i class="fas fa-user"></i> Clientes</h4>
+            <h4 class="black-text center"><i class="fas fa-user"></i> Clientes</h4><br>
             <div class="row">
                 <div class="col s12 m6 l6 push-l3 push-m3">
                     <a href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i>Ingresar saldo</a>
                 </div>
             </div>
             <br>
-            <h4 class="black-text center"><i class="fas fa-list"></i> Inventario y pedidos</h4>
+            <h4 class="black-text center"><i class="fas fa-list"></i> Inventario y pedidos</h4><br>
             <div class="row">
                 <div class="col s12 m6 l6">
                     <a href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i> Manejar inventario</a>
@@ -147,7 +147,7 @@
                 </div>
             </div>
             <br>
-            <h4 class="black-text center"><i class="fas fa-print"></i> Reportes diarios</h4>
+            <h4 class="black-text center"><i class="fas fa-print"></i> Reportes diarios</h4><br>
             <div class="row">
                 <div class="col s12 m6 l6">
                     <button href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i>Ver reporte en PDF</button>
