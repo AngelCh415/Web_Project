@@ -26,7 +26,7 @@
         $resultado = mysqli_query($conexion,$sql);
         if(mysqli_affected_rows($conexion) == 1 && move_uploaded_file($_FILES["archivo"]["tmp_name"],"$archUpload")){
             $respAX_JSON["codigo"]= 1;
-            $respAX_JSON["msj"] = "<h3>Gracias. Tu registro se realizó correctamente $numero </h3>";
+            $respAX_JSON["msj"] = "<h3>Gracias. Tu registro se realizó correctamente </h3>";
         } else{
             $respAX_JSON["codigo"]= 0;
             $respAX_JSON["msj"] = "<h3>Error, favor de intentarlo de nuevo :c </h3>";
