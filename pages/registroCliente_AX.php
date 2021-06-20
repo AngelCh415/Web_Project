@@ -3,6 +3,7 @@
     $nombre = $_POST["namesignup"];
     $correo = $_POST["emailsignup"];
     $contrasena = md5($_POST["passwordsignup"]);
+    $numero = $_POST["numbersignup"];
     
     date_default_timezone_set('America/Mexico_City');
     $hoy = date("g-i a");
@@ -14,7 +15,7 @@
 
     $respAX_JSON = array();
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
-    $sql = "INSERT INTO `cafeteria2021`.`usuarios` (`nombre`, `correo`, `contrasena`, `tipo`, `saldo`, `auditoria`) VALUES ('$nombre', '$correo', '$contrasena', '2', '0', NOW())";
+    $sql = "INSERT INTO `cafeteria2021`.`usuarios` (`nombre`, `correo`, `contrasena`, `numero`, `tipo`, `saldo`, `auditoria`) VALUES ('$nombre', '$correo', '$contrasena', '$numero', '2', '0', NOW())";
     $sqlCheckCorreo = "SELECT * FROM usuarios WHERE correo = '$correo'";
     $resultadoCheckCorreo = mysqli_query($conexion,$sqlCheckCorreo);
     
@@ -25,7 +26,7 @@
         $resultado = mysqli_query($conexion,$sql);
         if(mysqli_affected_rows($conexion) == 1 && move_uploaded_file($_FILES["archivo"]["tmp_name"],"$archUpload")){
             $respAX_JSON["codigo"]= 1;
-            $respAX_JSON["msj"] = "<h3>Gracias. Tu registro se realizó correctamente </h3>";
+            $respAX_JSON["msj"] = "<h3>Gracias. Tu registro se realizó correctamente $numero </h3>";
         } else{
             $respAX_JSON["codigo"]= 0;
             $respAX_JSON["msj"] = "<h3>Error, favor de intentarlo de nuevo :c </h3>";

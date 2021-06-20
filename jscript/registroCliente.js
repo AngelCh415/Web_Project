@@ -9,13 +9,13 @@ $(document).ready(function(){
     });
 
 
-    $("form#formRegistroCredito").validetta({
+    $("form#formRegistro").validetta({
         bubblePosition:"bottom",
         bubbleGapTop: 10,
         bubbleGapLeft: -5,
         onValid:function(e){
             e.preventDefault();
-            var formData = new FormData($("form#formRegistroCredito")[0]); //con jquery tengo acceso al elemento pero accedo al primer índice para realmente tener acceso a él
+            var formData = new FormData($("form#formRegistro")[0]); //con jquery tengo acceso al elemento pero accedo al primer índice para realmente tener acceso a él
             $.ajax({
                 url:"registroCliente_AX.php",
                 method:"post",
