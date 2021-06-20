@@ -76,7 +76,7 @@
         <div class="row">
             <div class="col s12 m4"><h5><i class="far fa-money-bill-alt"></i> Saldo:</h5></div>
             <div class="col s12 m4"><h5>$ <?php echo $infUsuario[5]?></h5></div>
-            <div class="col s12 m4"><a href="./registro_credito.html" class="btn brown">Aumentar</a></div>
+            <div class="col s12 m4"><a href="./registroCredito.html" class="btn brown">Aumentar</a></div>
         </div>
         <div class="row">
             <form id="formMail" name="formMail">

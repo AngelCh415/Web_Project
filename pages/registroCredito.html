@@ -18,7 +18,7 @@
 <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/registroCliente.js"></script>
+<script src="./../jscript/registroCredito.js"></script>
 
 <body>
     <div class="register">
@@ -27,12 +27,7 @@
             <br>
             
             <br><br>
-            <input class="controles" type="text" name="namesignup" id="namesignup" placeholder="Nombre completo" data-validetta="required">
-            <input class="controles" type="text" name="emailsignup" id="emailsignup" placeholder="correo" data-validetta="required,email">
-            <input class="controles" type="password" name="passwordsignup" id="passwordsignup" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Debe contener al menos un número y una letra minúscula y mayúscula, y al menos 8 o más caracteres" data-validetta="required,minLength[8],equalTo[passwordsignup_confirm]">
-            <input class="controles" type="password" name="passwordsignup_confirm" id="passwordsignup_confirm" placeholder="Confirmar contrasena" data-validetta="required,minLength[8],equalTo[passwordsignup]">
-            <br>
+            
             <label for="archivo">Comprobante de depósito:</label>
             <br><br>
             <input class="controles" type="file" id="archivo" name="archivo" accept=".pdf, .jpg">
