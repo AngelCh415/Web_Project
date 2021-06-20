@@ -17,6 +17,7 @@
         if(mysqli_affected_rows($conexion) == 1){
             $respAX_JSON["codigo"]= 1;
             $respAX_JSON["msj"] = "<h3>Tu contraseña se ha actualizado</h3>";
+            unset($_SESSION["recuperacionContrasena"]);
         } else{
             $respAX_JSON["codigo"]= 0;
             $respAX_JSON["msj"] = "<h3>Error, favor de intentarlo de nuevo</h3>";
