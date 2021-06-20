@@ -73,7 +73,7 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="./../pages/logout.php"> Cerrar sesión</a></li>
-                        <li><a href="./../pages/administrador.php"> Volver a menú administrador</a></li>
+                        <li><a href="./../pages/administrador.php"> Ir a menú</a></li>
                     </ul>
             </div>
         </nav> <!-- /menu -->
