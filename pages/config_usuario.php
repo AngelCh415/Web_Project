@@ -5,43 +5,22 @@
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
     mysqli_set_charset($conexion,"utf8");
 
-    $infUsuario;
+    $infoUsuario;
 
     if($sesion==1){
-        //Hay sesión de usuario
+        //Hay sesion
         $correo = $_SESSION["login"];
         $sqlUsuario = "SELECT * FROM usuarios WHERE correo = '$correo'";
         $resUsuario = mysqli_query($conexion,$sqlUsuario);
         $infUsuario = mysqli_fetch_row($resUsuario);
-        
-        $tipoUsuario = $infUsuario[4];
 
-        //Cargar lista del carrito de la BD
-        $sqlCarrito = "SELECT inventario.nombre,carrito.cantidad,inventario.precio,carrito.id_producto FROM  cafeteria2021.inventario, cafeteria2021.carrito WHERE carrito.id_usuario=$infUsuario[0] AND inventario.id_producto=carrito.id_producto;";
-        $resCarrito = mysqli_query($conexion,$sqlCarrito);
-        $listaCarrito = "";
-        $listaVacia = "";
-        $total = 0;
-        while($filas=mysqli_fetch_array($resCarrito,2)){
-            $listaCarrito .= "<tr>
-                <td>$filas[0]</td>
-                <td>$filas[1]</td>
-                <td>$".$filas[2]*$filas[1]."</td>
-                <td><i class='btn brown far fa-trash-alt deleteCarrito' data-usr=$infUsuario[0] data-prod=$filas[3]></i></td>
-                </tr>";
-            $total += $filas[2]*$filas[1];
-        }
-        if($total==0)
-            $listaVacia = "<h4 style='text-align:center'>El carrito está vacío.</h4>";
+        $tipoUsuario = $infUsuario[4];
     }else{
-        //No hay sesión de usuario
+        //No hay sesion
         header("location: ./login.html");
     }
 ?>
 
-<!--*****************
-    Inicia HTML
-******************-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,8 +40,8 @@
 <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/carrito.js"></script>
 <script src="./../jscript/index.js"></script>
+<script src="./../jscript/config_usuario.js"></script>
 </head>
 <body>
   <header>
@@ -73,8 +52,8 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href='<?php if($sesion) echo "./logout.php"; else echo "./login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
-          <li><a href='<?php if($sesion) echo "./config_usuario.php"; else echo "./registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
+          <li><a href='<?php if($sesion) echo "./carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
+          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pedidos.php";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
         </ul>
@@ -83,55 +62,41 @@
     </div>
     <ul class="sidenav" id="mobile-demo">
           <li><a href='<?php if($sesion) echo "./logout.php"; else echo "./login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
-          <li><a href='<?php if($sesion) echo "./config_usuario.php"; else echo "./registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
+          <li><a href='<?php if($sesion) echo "./carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
+          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pedidos.php";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
     </ul> <!-- /menu mobile-->
   </header>
   <main>
-    <div class="container">
-        <div id="title" class="row">
-            <h4>Carrito de <?php echo $infUsuario[1]?></h4>
-        </div>
-        <div id="list" class="row">
-            <table class="striped centered responsive-table">
-                <thead>
-                    <tr><td>Producto</td><td>Cantidad</td><td>Precio</td><td>Acción</td></tr>
-                </thead>
-                <tbody>
-                    <?php if($total>0) echo $listaCarrito?>
-                </tbody>
-            </table>
-            <?php if($total==0) echo $listaVacia?>
-        </div>
-        <hr>
+      <div class="container">
         <div class="row">
-            <h6>
-            <div class="col s6 m8" style="text-align: right">Total a pagar:</div>
-            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $total?></b></div>
-            </h6>
+            <h4>Perfil de <?php echo $infUsuario[1]?></h4>
         </div>
         <div class="row">
-            <h6>
-            <div class="col s6 m8" style="text-align: right">Saldo actual:</div>
-            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $infUsuario[5]?></b></div>
-            </h6>
+            <div class="col s12 m4"><h5><i class="far fa-money-bill-alt"></i> Saldo:</h5></div>
+            <div class="col s12 m4"><h5>$ <?php echo $infUsuario[5]?></h5></div>
+            <div class="col s12 m4"><a href="./registro_credito.html" class="btn brown">Aumentar</a></div>
         </div>
         <div class="row">
-            <div class="col m6"></div>
-            <?php
-                if($total>0)
-                    if($total<=$infUsuario[5]){
-                        //saldo suficiente, pagar
-                        echo "<div class='col s12 m6'><a class='btn green pagarProductos' data-usr='$infUsuario[0]' data-total='$total' style='width:100%;'>Pagar</a></div>";
-                    }else{
-                        //saldo insuficiente, agregar
-                        echo "<div class='col s12 m6'><h6 align='center' style='color:red;'>Saldo insuficiente para pagar.</h6></div>";
-                    }
-            ?>
+            <form id="formMail" name="formMail">
+                <div class="col s12 m4"><h5><i class="far fa-envelope"></i> Correo:</h5></div>
+                <div class="col s12 m4">
+                    <input name="email" id="email" data-validetta="email" value='<?php echo $infUsuario[2]?>' disabled/>
+                    <input name="usuario" id="usuario" value='<?php echo $infUsuario[0]?>' hidden/>
+                </div>
+                <div class="col s12 m4">
+                    <a class="btn brown cambiarEMail">Modificar</a> 
+                    <button type="submit" name="btnUpdate" id="btnUpdate" class="btn brown updateEMail" disabled>Actualizar</button>
+                </div>
+            </form>
         </div>
-    </div>
+        <div class="row">
+            <div class="col s12 m4"><h5><i class="fas fa-key"></i> Contraseña:</h5></div>
+            <div class="col s12 m4"><input type="password" value="sample password" disabled></div>
+            <div class="col s12 m4"><a class="btn brown cambiarContrasena" data-usr='<?php echo $infUsuario[0]?>'>Cambiar</a></div>
+        </div>
+        </div>
   </main>
   <footer class="page-footer brown lighten-1">
     <div class="container">
