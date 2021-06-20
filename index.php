@@ -217,8 +217,8 @@
           <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
           <li><a href='<?php if($sesion) echo "./pages/config_usuario.html"; else echo "./pages/registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
           <li><a href='<?php if($sesion) echo "./pages/carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
+          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/pedidos.php";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <li><a href='<?php if($tipoUsuario == 0) echo "./pages/administrador.php";?>'><?php if($tipoUsuario == 0) echo "Pag. administrador";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
         </ul>
@@ -229,8 +229,8 @@
           <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
           <li><a href='<?php if($sesion) echo "./pages/config_usuario.html"; else echo "./pages/registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
           <li><a href='<?php if($sesion) echo "./pages/carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
+          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/pedidos.php";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <li><a href='<?php if($tipoUsuario == 0) echo "./pages/administrador.php";?>'><?php if($tipoUsuario == 0) echo "Pag. administrador";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
     </ul> <!-- /menu mobile-->

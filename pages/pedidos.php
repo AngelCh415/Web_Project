@@ -7,14 +7,37 @@
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
     mysqli_set_charset($conexion,"utf8");
 
-    $sqlUsuarioAdmin = "SELECT * FROM usuarios WHERE correo = '$sesion' AND tipo = '0'";
+    $sqlUsuarioAdmin = "SELECT * FROM usuarios WHERE correo = '$sesion' AND (tipo = '1' OR tipo = '0')";
     $resUsuarioAdmin = mysqli_query($conexion,$sqlUsuarioAdmin);
     $infoUsuarioAdmin = mysqli_num_rows($resUsuarioAdmin);
     
     if($infoUsuarioAdmin != 1){
         header("location: ./../index.php");
     }else{
+        $sqlAlumnos = "SELECT * FROM pedidos WHERE estado = '0'";
+        $resAlumnos = mysqli_query($conexion, $sqlAlumnos); //guardo el resultado de la consulta
+        //$infAlumnos = mysqli_fetch_row($resAlumnos);
+
+        /*$sqlCheckCorreo = "SELECT * FROM usuarios WHERE correo = '$correo'";
+        $resUsuario = mysqli_query($conexion, $sqlCheckCorreo);
+        $infUsuario = mysqli_fetch_row($resUsuario);*/
+
+        $sqlPedido = "SELECT * FROM detalle_pedido WHERE id_pedido = '1'";
+        //$sqlPedido = "SELECT * FROM detalle_pedido WHERE id_pedido = '0'";
+        $resPedido = mysqli_query($conexion, $sqlPedido); //guardo el resultado de la consulta
+        //$infPedido = mysqli_fetch_row($resPedido);
+        //$row = mysqli_fetch_array($resPedido, MYSQLI_BOTH);
         
+        $trAlumnos = "";
+        while($filas = mysqli_fetch_array($resPedido, MYSQLI_BOTH)){ 
+            $trAlumnos .= "<tr>
+                <td>$filas[0]</td>
+                <td>$filas[1]</td>
+                <td>$filas[2]</td>
+                <td><i class='fas fa-window-close fa-2x red-text text-darken-3 disminuirInventario' data-nombre='$filas[1]'></i></td>
+                <td><i class='fas fa-check-square fa-2x green-text text-darken-3 aumentarInventario' data-nombre='$filas[1]'></i></td>
+            </tr>";
+        }
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +45,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Administrador</title>
+<title>Administrador - Clientes</title>
 <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -37,7 +60,8 @@
 <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/index.js"></script>
+<script src="./../jscript/adminManejarInventario.js"></script>
+
 </head>
 
 <body>
@@ -49,47 +73,33 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="./../pages/logout.php"> Cerrar sesión</a></li>
-                        <!--<li><a href="">Ver perfil</a></li>
-                        <li><a href="">Carrito</a></li>-->
+                        <li><a href="./../pages/administrador.php"> Volver a menú administrador</a></li>
                     </ul>
             </div>
         </nav> <!-- /menu -->
         </div>
         <ul class="sidenav" id="mobile-demo">
             <li><a href="./../pages/logout.php"> Cerrar sesión</a></li>
+            <li><a href="./../pages/administrador.php"> Volver a menú administrador</a></li>
         </ul> <!-- /menu mobile-->
     </header>
 
 
-    <main class="valign-wrapper">
+    <main>
         <div class="container">
-            <h4 class="black-text center"><i class="fas fa-user"></i> Clientes</h4><br>
             <div class="row">
-                <div class="col s12 m6 l6 push-l3 push-m3">
-                    <a href="./adminSaldoCliente.php" class="btn brown lighten-1" style="width:100%;"><i></i>Ingresar saldo</a>
-                </div>
+            <h3 style="text-align:center;">Pedidos</h3>
+                <!-- clase de materialize-->
+                <table class="centered striped responsive-table">
+                    <thead>
+                        <!--- los encabezados de la tabla--->
+                        <tr><th>Pedido No.</th><th>Productos</th><th>Cantidad</th><th>Cancelar</th><th>Completado</th></tr>
+                    </thead>
+                    <tbody>
+                        <?php echo $trAlumnos; ?>
+                    </tbody>
+                </table>
             </div>
-            <br>
-            <h4 class="black-text center"><i class="fas fa-list"></i> Inventario y pedidos</h4><br>
-            <div class="row">
-                <div class="col s12 m6 l6">
-                    <a href="./adminManejarInventario.php" class="btn brown lighten-1" style="width:100%;"><i></i> Manejar inventario</a>
-                </div>
-                <div class="col s12  m6 l6">
-                    <a href="./pedidos.php" class="btn brown lighten-1" style="width:100%;"><i></i>Ver pedidos</a>
-                </div>
-            </div>
-            <br>
-            <h4 class="black-text center"><i class="fas fa-print"></i> Reportes diarios</h4><br>
-            <div class="row">
-                <div class="col s12 m6 l6">
-                    <button href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i>Ver reporte en PDF</button>
-                </div>
-                <div class="col s12  m6 l6">
-                    <button href="./login.html" class="btn brown lighten-1 white-text" style="width:100%;"><i></i>Guardar reporte</button>
-                </div>
-            </div>
-        
         </div>
     </main>
 
