@@ -14,28 +14,21 @@
     if($infoUsuarioAdmin != 1){
         header("location: ./../index.php");
     }else{
-        $sqlAlumnos = "SELECT * FROM pedidos WHERE estado = '0'";
-        $resAlumnos = mysqli_query($conexion, $sqlAlumnos); //guardo el resultado de la consulta
-        //$infAlumnos = mysqli_fetch_row($resAlumnos);
-
-        /*$sqlCheckCorreo = "SELECT * FROM usuarios WHERE correo = '$correo'";
-        $resUsuario = mysqli_query($conexion, $sqlCheckCorreo);
-        $infUsuario = mysqli_fetch_row($resUsuario);*/
-
-        $sqlPedido = "SELECT * FROM detalle_pedido WHERE id_pedido = '1'";
-        //$sqlPedido = "SELECT * FROM detalle_pedido WHERE id_pedido = '0'";
-        $resPedido = mysqli_query($conexion, $sqlPedido); //guardo el resultado de la consulta
-        //$infPedido = mysqli_fetch_row($resPedido);
-        //$row = mysqli_fetch_array($resPedido, MYSQLI_BOTH);
+        $sqlAlumnos = "SELECT * FROM detalle_pedido WHERE estado = '0'";
+        $resAlumnos = mysqli_query($conexion, $sqlAlumnos); 
         
         $trAlumnos = "";
-        while($filas = mysqli_fetch_array($resPedido, MYSQLI_BOTH)){ 
+        while($filas = mysqli_fetch_array($resAlumnos, MYSQLI_BOTH)){ 
+            $sqlPro = "SELECT * FROM inventario WHERE id_producto = '$filas[1]'";
+            $resPro = mysqli_query($conexion, $sqlPro); 
+            $row = mysqli_fetch_array($resPro, MYSQLI_BOTH);
+
             $trAlumnos .= "<tr>
                 <td>$filas[0]</td>
-                <td>$filas[1]</td>
+                <td>$row[1]</td>
                 <td>$filas[2]</td>
-                <td><i class='fas fa-window-close fa-2x red-text text-darken-3 disminuirInventario' data-nombre='$filas[1]'></i></td>
-                <td><i class='fas fa-check-square fa-2x green-text text-darken-3 aumentarInventario' data-nombre='$filas[1]'></i></td>
+                <td><i class='fas fa-window-close fa-2x red-text text-darken-3 cancelarPedido' data-pedido='$filas[0]' data-producto='$filas[1]'></i></td>
+                <td><i class='fas fa-check-square fa-2x green-text text-darken-3 completarPedido' data-pedido='$filas[0]' data-producto='$filas[1]'></i></td>
             </tr>";
         }
 ?>
@@ -60,7 +53,7 @@
 <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
 <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
 <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/adminManejarInventario.js"></script>
+<script src="./../jscript/pedidos.js"></script>
 
 </head>
 
