@@ -22,8 +22,8 @@
                 <td>$filas[1]</td>
                 <td>$filas[3] unidades</td>
                 <td>
-                    <i class='fas fa-minus fa-2x red-text text-darken-3 disminuirInventario' data-nombre='$filas[1]'></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class='fas fa-plus fa-2x green-text text-darken-3 aumentarInventario' data-nombre='$filas[1]'></i>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i class='fas fa-minus fa-2x red-text text-darken-3 disminuirInventario' data-nombre='$filas[1]'></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class='fas fa-plus fa-2x green-text text-darken-3 aumentarInventario' data-nombre='$filas[1]'></i>&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
             </tr>";
         }

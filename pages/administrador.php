@@ -66,7 +66,7 @@
             <h4 class="black-text center"><i class="fas fa-user"></i> Clientes</h4><br>
             <div class="row">
                 <div class="col s12 m6 l6 push-l3 push-m3">
-                    <a href="./saldoCliente.php" class="btn brown lighten-1" style="width:100%;"><i></i>Ingresar saldo</a>
+                    <a href="./adminSaldoCliente.php" class="btn brown lighten-1" style="width:100%;"><i></i>Ingresar saldo</a>
                 </div>
             </div>
             <br>
