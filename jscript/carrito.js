@@ -25,4 +25,26 @@ $(document).ready(function(){
             }
         });
     });
+    $(".pagarProductos").click(function(){
+        let usr=$(this).attr("data-usr");
+        let total=$(this).attr("data-total");
+        $.ajax({
+            url: "./../pages/pagar.php",
+            method: "post",
+            data: {usuario:usr,total:total},
+            cache: false,
+            success:function(respAX){
+                $.alert({
+                    title: "Aviso",
+                    content: respAX,
+                    icon: 'fas fa-info-circle fa-2x',
+                    boxWidth: '50%',
+                    useBootstrap: false,
+                    onDestroy: function(){
+                        window.location.href="./../pages/carrito.php";
+                    },
+                });
+            }
+        });
+    });
 });
