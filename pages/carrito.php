@@ -74,8 +74,6 @@
         <ul class="right hide-on-med-and-down">
           <li><a href='<?php if($sesion) echo "./logout.php"; else echo "./login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
           <li><a href='<?php if($sesion) echo "./config_usuario.html"; else echo "./registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
-          <li><a href='<?php if($sesion) echo "./carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0) echo "./administrador.php";?>'><?php if($tipoUsuario == 0) echo "Pag. administrador";?></a></li>
           <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
@@ -86,8 +84,6 @@
     <ul class="sidenav" id="mobile-demo">
           <li><a href='<?php if($sesion) echo "./logout.php"; else echo "./login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
           <li><a href='<?php if($sesion) echo "./config_usuario.html"; else echo "./registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
-          <li><a href='<?php if($sesion) echo "./carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0) echo "./administrador.php";?>'><?php if($tipoUsuario == 0) echo "Pag. administrador";?></a></li>
           <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
