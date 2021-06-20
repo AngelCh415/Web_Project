@@ -127,7 +127,7 @@
                 if($total>0)
                     if($total<=$infUsuario[5]){
                         //saldo suficiente, pagar
-                        echo "<div class='col s12 m6'><a class='btn green' style='width:100%;'>Pagar</a></div>";
+                        echo "<div class='col s12 m6'><a class='btn green pagarProductos' data-usr='$infUsuario[0]' data-total='$total' style='width:100%;'>Pagar</a></div>";
                     }else{
                         //saldo insuficiente, agregar
                         echo "<div class='col s12 m6'><h6 align='center' style='color:red;'>Saldo insuficiente para pagar.</h6></div>";
