@@ -32,7 +32,7 @@ $(document).ready(function(){
                     useBootstrap: false,
                     onDestroy:function(){
                     if(AX.codigo == 1)
-                        window.location.href = "./login.html";
+                        window.location.href = "./config_usuario.php";
                     }
                 });
             }

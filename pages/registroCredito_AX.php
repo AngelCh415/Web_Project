@@ -14,7 +14,7 @@
     $respAX_JSON = array();
     if(move_uploaded_file($_FILES["archivo"]["tmp_name"],"$archUpload")){
         $respAX_JSON["codigo"]= 1;
-        $respAX_JSON["msj"] = "<h3>Gracias. Tu registro se realizó correctamente :) </h3>";
+        $respAX_JSON["msj"] = "<h3>Gracias. Tu saldo se verá reflejado en breve </h3>";
     } else{
         $respAX_JSON["codigo"]= 0;
         $respAX_JSON["msj"] = "<h3>Error, favor de intentarlo de nuevo :c </h3>";
