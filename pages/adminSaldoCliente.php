@@ -20,7 +20,7 @@
         while($filas = mysqli_fetch_array($resAlumnos, MYSQLI_BOTH )){ 
             $trAlumnos .= "<tr>
                 <td>$filas[1]</td>
-                <td>$$filas[5]</td>
+                <td>$$filas[6]</td>
                 <td>
                     <i class='fas fa-dollar-sign fa-2x black-text text-darken-3 aumentarSaldo' data-correo='$filas[2]'></i>
                 </td>

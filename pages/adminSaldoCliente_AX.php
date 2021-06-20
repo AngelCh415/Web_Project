@@ -10,7 +10,7 @@
     $infUsuario = mysqli_fetch_row($resultadoCheckSaldo);
     
     if(mysqli_num_rows($resultadoCheckSaldo) == 1){
-        $nuevoSaldo = $infUsuario[5] + $saldo;
+        $nuevoSaldo = $infUsuario[6] + $saldo;
         $sql = "UPDATE `cafeteria2021`.`usuarios` SET saldo = '$nuevoSaldo' WHERE correo = '$correo'";
         $resultado = mysqli_query($conexion,$sql);
         if(mysqli_affected_rows($conexion) == 1){

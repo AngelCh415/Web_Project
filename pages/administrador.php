@@ -83,10 +83,10 @@
             <h4 class="black-text center"><i class="fas fa-print"></i> Reportes diarios</h4><br>
             <div class="row">
                 <div class="col s12 m6 l6">
-                    <button href="./login.html" class="btn brown lighten-1" style="width:100%;"><i></i>Ver reporte en PDF</button>
+                    <a href="./pedidos.php" class="btn brown lighten-1" style="width:100%;"><i></i>Ver reporte en PDF</a>
                 </div>
                 <div class="col s12  m6 l6">
-                    <button href="./login.html" class="btn brown lighten-1 white-text" style="width:100%;"><i></i>Guardar reporte</button>
+                    <a href="./pedidos.php" class="btn brown lighten-1 white-text" style="width:100%;"><i></i>Guardar reporte</a>
                 </div>
             </div>
         
