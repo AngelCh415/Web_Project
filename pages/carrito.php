@@ -115,14 +115,14 @@
         <div class="row">
             <h6>
             <div class="col s6 m8" style="text-align: right">Saldo actual:</div>
-            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $infUsuario[5]?></b></div>
+            <div clas="col s6 m4" style="text-align: center"><b>$ <?php echo $infUsuario[6]?></b></div>
             </h6>
         </div>
         <div class="row">
             <div class="col m6"></div>
             <?php
                 if($total>0)
-                    if($total<=$infUsuario[5]){
+                    if($total<=$infUsuario[6]){
                         //saldo suficiente, pagar
                         echo "<div class='col s12 m6'><a class='btn green pagarProductos' data-usr='$infUsuario[0]' data-total='$total' style='width:100%;'>Pagar</a></div>";
                     }else{
