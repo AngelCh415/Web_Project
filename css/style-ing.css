@@ -8,9 +8,9 @@ body{
     background-color: white;
 }
 .register{
-    width: 400px;
-    height: 340 px;
+    width: 600px;
     background-color: #4e4d4d;
+    border-radius: 10px;
     margin: auto;
     margin-top: 180px;
     box-shadow: 7px 13px 37px #000;
@@ -57,3 +57,10 @@ body{
     text-decoration: underline;
 }
 
+@media only screen and (max-width:1000px) and (min-width:600px ) {
+    .register{
+        width: 80%;
+        margin: 40% auto;
+    }
+    
+}

@@ -15,7 +15,7 @@
     } else {
       $tipoUsuario = 2;
     }
-
+    
     $sqlInventarioCafe = "SELECT * FROM inventario WHERE categoria = 'Café'";
     $resInventarioCafe = mysqli_query($conexion,$sqlInventarioCafe);
     $trInventarioCafe = "";
@@ -275,7 +275,7 @@
       <h1 style="text-align:center;">CAFÉ</h1>
       <h1 style="text-align:center;"></h1>
         <table class="centered striped centered responsive-table">
-            <thead>
+            <thead class= "rwd_auto fontsize">
                 <tr><th>Imagen</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Opciones</th></tr>
             </thead>
             <tbody>

@@ -24,6 +24,7 @@
     flex: 1 0 auto;
   }
 
+
   @media (max-width: 992px) {
   .productos1 {
     display: none;
@@ -34,3 +35,4 @@
     display: none;
   }
   }
+  
