@@ -18,12 +18,12 @@
             $respAX_JSON["msj"] = "<h3>Inventario actualizado a ".$nuevoSaldo."</h3>";
         } else{
             $respAX_JSON["codigo"]= 0;
-            $respAX_JSON["msj"] = "<h3>Error, favor de intentarlo de nuevo :c </h3>";
+            $respAX_JSON["msj"] = "<h3>Error, no se agregó a la base de datos favor de intentarlo de nuevo :c </h3>";
         }
     } else{
 
         $respAX_JSON["codigo"]= 2;
-        $respAX_JSON["msj"] = "<h3>Error, favor de intentarlo de nuevo :c </h3>";
+        $respAX_JSON["msj"] = "<h3>Error, no existe el producto en la BD favor de intentarlo de nuevo :c </h3>";
     }
     echo json_encode($respAX_JSON);
 ?>
