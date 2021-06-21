@@ -18,16 +18,26 @@ $(document).ready(function(){
                 data:$("form#formMail").serialize(),
                 cache:false,
                 success:function(respAX){
-                    $.alert({
-                        title: 'Aviso',
-                        content: respAX,
-                        icon: 'fas fa-info-circle fa-2x',
-                        boxWidth: '50%',
-                        useBootstrap: false,
-                        onDestroy: function(){
-                            window.location.href="./logout.php";
-                        },
-                    });
+                    if(respAX=="Error, ese correo ya está registrado."){
+                        $.alert({
+                            title: 'Aviso',
+                            content: respAX,
+                            icon: 'fas fa-info-circle fa-2x',
+                            boxWidth: '50%',
+                            useBootstrap: false,
+                        });
+                    }else{
+                        $.alert({
+                            title: 'Aviso',
+                            content: respAX,
+                            icon: 'fas fa-info-circle fa-2x',
+                            boxWidth: '50%',
+                            useBootstrap: false,
+                            onDestroy: function(){
+                                window.location.href="./logout.php";
+                            },
+                        });
+                    }                    
                 }
             });
         }
