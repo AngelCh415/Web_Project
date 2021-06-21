@@ -75,7 +75,7 @@
         </div>
         <div class="row">
             <div class="col s12 m4"><h5><i class="far fa-money-bill-alt"></i> Saldo:</h5></div>
-            <div class="col s12 m4"><h5>$ <?php echo $infUsuario[5]?></h5></div>
+            <div class="col s12 m4"><h5>$ <?php echo $infUsuario[6]?></h5></div>
             <div class="col s12 m4"><a href="./registroCredito.html" class="btn brown">Aumentar</a></div>
         </div>
         <div class="row">
@@ -92,11 +92,24 @@
             </form>
         </div>
         <div class="row">
+            <form id="formPhone" name="formPhone">
+                <div class="col s12 m4"><h5><i class="fas fa-phone"></i> Teléfono celular:</h5></div>
+                <div class="col s12 m4">
+                    <input name="phone" id="phone" data-validetta="number" value='<?php echo $infUsuario[4]?>' disabled/>
+                    <input name="usuario" id="usuario" value='<?php echo $infUsuario[0]?>' hidden/>
+                </div>
+                <div class="col s12 m4">
+                    <a class="btn brown cambiarPhone">Modificar</a> 
+                    <button type="submit" name="btnUpdatePhone" id="btnUpdatePhone" class="btn brown updatePhone" disabled>Actualizar</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
             <div class="col s12 m4"><h5><i class="fas fa-key"></i> Contraseña:</h5></div>
             <div class="col s12 m4"><input type="password" value="sample password" disabled></div>
             <div class="col s12 m4"><a class="btn brown cambiarContrasena" data-usr='<?php echo $infUsuario[0]?>'>Cambiar</a></div>
         </div>
-        </div>
+      </div>
   </main>
   <footer class="page-footer brown lighten-1">
     <div class="container">
