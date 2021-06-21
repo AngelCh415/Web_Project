@@ -58,10 +58,9 @@ body{
     text-decoration: underline;
 }
 
-@media only screen and (max-width:1000px) and (min-width:600px ) {
-    .Login{
+@media (max-width: 992px) {
+    .Login {
         width: 80%;
         margin: 40% auto;
     }
-    
 }
