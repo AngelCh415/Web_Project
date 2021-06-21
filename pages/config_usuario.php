@@ -14,7 +14,7 @@
         $resUsuario = mysqli_query($conexion,$sqlUsuario);
         $infUsuario = mysqli_fetch_row($resUsuario);
 
-        $tipoUsuario = $infUsuario[4];
+        $tipoUsuario = $infUsuario[5];
     }else{
         //No hay sesion
         header("location: ./login.html");
