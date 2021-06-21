@@ -5,14 +5,14 @@
     $respAX_JSON = array();
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
     
-    $sqlCheckSaldo = "SELECT * FROM inventario WHERE nombre = '$nombre'";
+    $sqlCheckSaldo = "SELECT * FROM inventario WHERE id_producto = '$nombre'";
     $resultadoCheckSaldo = mysqli_query($conexion,$sqlCheckSaldo);
     $infUsuario = mysqli_fetch_row($resultadoCheckSaldo);
     
     if(mysqli_num_rows($resultadoCheckSaldo) == 1){
         $nuevoSaldo = $infUsuario[3] - $numInventario;
         if($nuevoSaldo >= 0){
-            $sql = "UPDATE `cafeteria2021`.`inventario` SET existencia = '$nuevoSaldo' WHERE nombre = '$nombre'";
+            $sql = "UPDATE `cafeteria2021`.`inventario` SET existencia = '$nuevoSaldo' WHERE id_producto = '$nombre'";
             $resultado = mysqli_query($conexion,$sql);
             if(mysqli_affected_rows($conexion) == 1){
                 $respAX_JSON["codigo"]= 1;
