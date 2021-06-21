@@ -4,6 +4,11 @@ $(document).ready(function(){
         $("#btnUpdate").removeAttr("disabled");
     });
 
+    $(".cambiarPhone").click(function(){
+        $("#phone").removeAttr("disabled");
+        $("#btnUpdatePhone").removeAttr("disabled");
+    });
+
     $("form#formMail").validetta({
         onValid:function(){
             event.preventDefault();
@@ -21,6 +26,29 @@ $(document).ready(function(){
                         useBootstrap: false,
                         onDestroy: function(){
                             window.location.href="./logout.php";
+                        },
+                    });
+                }
+            });
+        }
+    });
+    $("form#formPhone").validetta({
+        onValid:function(){
+            event.preventDefault();
+            $.ajax({
+                url:"./config_phone_AX.php",
+                method:"post",
+                data:$("form#formPhone").serialize(),
+                cache:false,
+                success:function(respAX){
+                    $.alert({
+                        title: 'Aviso',
+                        content: respAX,
+                        icon: 'fas fa-info-circle fa-2x',
+                        boxWidth: '50%',
+                        useBootstrap: false,
+                        onDestroy: function(){
+                            window.location.href="./config_usuario.php";
                         },
                     });
                 }
