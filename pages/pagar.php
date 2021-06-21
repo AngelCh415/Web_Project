@@ -7,7 +7,6 @@
     $usuario = $_POST["usuario"];
 
     while($filas=mysqli_fetch_array($res,2)){
-        //$sql2 = "INSERT INTO `cafeteria2021`.`detalle_pedido` (`id_producto`, `cantidad`, `id_usuario`, `estado`, `tipo`, `saldo`, `auditoria`) VALUES ('$nombre', '$correo', '$contrasena', '$numero', '2', '0', NOW())";
         $sql2 = "INSERT INTO `cafeteria2021`.`detalle_pedido` (`id_producto`, `cantidad`, `id_usuario`, `estado`,`auditoria`) VALUES ('$filas[1]','$filas[2]','$usuario','0', NOW());";
         mysqli_query($conexion,$sql2);
     }
