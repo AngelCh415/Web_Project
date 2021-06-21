@@ -14,7 +14,7 @@
         $resUsuario = mysqli_query($conexion,$sqlUsuario);
         $infUsuario = mysqli_fetch_row($resUsuario);
         
-        $tipoUsuario = $infUsuario[4];
+        $tipoUsuario = $infUsuario[5];
 
         //Cargar lista del carrito de la BD
         $sqlCarrito = "SELECT inventario.nombre,carrito.cantidad,inventario.precio,carrito.id_producto FROM  cafeteria2021.inventario, cafeteria2021.carrito WHERE carrito.id_usuario=$infUsuario[0] AND inventario.id_producto=carrito.id_producto;";
