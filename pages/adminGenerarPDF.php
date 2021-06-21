@@ -7,7 +7,7 @@
     $correoAdmin = $_SESSION["login"];
     
     date_default_timezone_set('America/Mexico_City');
-    $hoy = date("F j, Y, g-i a");
+    $hoy = date("Y-m-d",time());
 
     $sqlAdmin = "SELECT * FROM usuarios WHERE correo = '$correoAdmin'";
     $resAdmin = mysqli_query($conexion, $sqlAdmin);
