@@ -57,10 +57,10 @@ body{
     text-decoration: underline;
 }
 
-@media only screen and (max-width:1000px) and (min-width:600px ) {
-    .register{
+@media (max-width: 900px) {
+    .Login {
+        
         width: 80%;
         margin: 40% auto;
     }
-    
 }
