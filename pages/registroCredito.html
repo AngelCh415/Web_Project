@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>
-        Registro
+        Aumentar saldo
     </title>
-</head>
-<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name='viewport'
+        content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
 
-<link href="./../css/style-ing.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<!--<link href="./../materialize/css/materialize.min.css" rel="stylesheet">-->
-<link href="./../jscript/plugins/validetta101/validetta.min.css" rel="stylesheet">
-<link href="./../jscript/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
-<!--<link href="./../css/general.css" rel="stylesheet">-->
-<script src="./../jscript/jquery-3.6.0.min.js"></script>
-<!--<script src="./../materialize/js/materialize.min.js"></script>-->
-<script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
-<script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
-<script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/registroCredito.js"></script>
+    <link href="./../css/style-login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--<link href="./../materialize/css/materialize.min.css" rel="stylesheet">-->
+    <link href="./../jscript/plugins/validetta101/validetta.min.css" rel="stylesheet">
+    <link href="./../jscript/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
+    <!--<link href="./../css/general.css" rel="stylesheet">-->
+    <script src="./../jscript/jquery-3.6.0.min.js"></script>
+    <!--<script src="./../materialize/js/materialize.min.js"></script>-->
+    <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
+    <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
+    <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
+    <script src="./../jscript/registroCredito.js"></script>
+</head>
 
 <body>
-    <div class="register">
+    <div class="Login">
         <form id="formRegistroCredito" enctype="multipart/form-data" autocomplete="on">
             <h1 style="text-align: center;">Aumentar saldo</h1>
             <br>
-            
+
             <br><br>
-            
+
             <label for="archivo">Comprobante de depósito:</label>
             <br><br>
             <input class="controles" type="file" id="archivo" name="archivo" accept=".pdf, .jpg">
@@ -37,9 +41,6 @@
             <p><a href="./config_usuario.php"> Cancelar </a></p>
         </form>
     </div>
-
-
-    
 </body>
 
 </html>

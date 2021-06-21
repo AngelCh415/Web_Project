@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>
         Nueva contraseña
     </title>
-</head>
-<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
 
-<link href="./../css/style-ing.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<!--<link href="./../materialize/css/materialize.min.css" rel="stylesheet">-->
-<link href="./../jscript/plugins/validetta101/validetta.min.css" rel="stylesheet">
-<link href="./../jscript/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
-<!--<link href="./../css/general.css" rel="stylesheet">-->
-<script src="./../jscript/jquery-3.6.0.min.js"></script>
-<!--<script src="./../materialize/js/materialize.min.js"></script>-->
-<script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
-<script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
-<script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
-<script src="./../jscript/crearNuevaContrasena.js"></script>
+    <meta name='viewport'
+        content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <link href="./../css/style-login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--<link href="./../materialize/css/materialize.min.css" rel="stylesheet">-->
+    <link href="./../jscript/plugins/validetta101/validetta.min.css" rel="stylesheet">
+    <link href="./../jscript/plugins/confirm334/jquery-confirm.min.css" rel="stylesheet">
+    <!--<link href="./../css/general.css" rel="stylesheet">-->
+    <script src="./../jscript/jquery-3.6.0.min.js"></script>
+    <!--<script src="./../materialize/js/materialize.min.js"></script>-->
+    <script src="./../jscript/plugins/validetta101/validetta.min.js"></script>
+    <script src="./../jscript/plugins/validetta101/validettaLang-es-ES.js"></script>
+    <script src="./../jscript/plugins/confirm334/jquery-confirm.min.js"></script>
+    <script src="./../jscript/crearNuevaContrasena.js"></script>
+</head>
 
 <body>
-    <div class="register">
+    <div class="Login">
         <form id="formRegistro" autocomplete="on">
             <h5 style="text-align: center;">Nueva Contraseña</h5>
-            
+
             <p>
                 <input class="controles" id="passwordsignup" name="passwordsignup" type="password"
                     placeholder="Nueva contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Debe contener al menos un número y una letra minúscula y mayúscula, y al menos 8 o más caracteres" data-validetta="required,minLength[8],equalTo[passwordsignup_confirm]"/>
+                    title="Debe contener al menos un número y una letra minúscula y mayúscula, y al menos 8 o más caracteres"
+                    data-validetta="required,minLength[8],equalTo[passwordsignup_confirm]" />
             </p>
             <br>
             <p>
 
-                <input class="controles" id="passwordsignup_confirm" name="passwordsignup_confirm" type="password" placeholder="Confirmar contraseña" data-validetta="required,minLength[8],equalTo[passwordsignup]"/>
+                <input class="controles" id="passwordsignup_confirm" name="passwordsignup_confirm" type="password"
+                    placeholder="Confirmar contraseña" data-validetta="required,minLength[8],equalTo[passwordsignup]" />
             </p>
             <br>
             <button type="submit" class="boton" style="width:100%">Guardar contraseña</button>
         </form>
     </div>
-
-
-    
 </body>
+
 </html>
