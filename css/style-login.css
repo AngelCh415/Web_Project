@@ -61,7 +61,6 @@ body{
 
 @media (max-width: 900px) {
     .Login {
-        width: 80%;
-        margin: 10% auto;
+        width: 70%;
     }
 }
