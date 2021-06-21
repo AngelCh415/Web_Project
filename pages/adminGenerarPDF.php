@@ -7,7 +7,7 @@
     $correoAdmin = $_SESSION["login"];
     
     date_default_timezone_set('America/Mexico_City');
-    $hoy = date("Y-m-d",time());
+    $hoy = date("Y-m-d");
 
     $sqlAdmin = "SELECT * FROM usuarios WHERE correo = '$correoAdmin'";
     $resAdmin = mysqli_query($conexion, $sqlAdmin);
@@ -41,7 +41,7 @@
         background-color: #dddddd;
     }
     </style>
-    <h1><a name="top"></a>Reporte Diario - Cafetería ESCOM</h1>
+    <h1><a name="top"></a>Cafetería ESCOM - Reporte '.$hoy.'</h1>
     <br><br>
     <h2>Reporte de inventario</h2>
     <h4>Este es el estado actual del inventario</h4>
@@ -63,7 +63,34 @@
     <br><p style="color: blue;">Recuerda que puedes editar el inventario siguiendo este QR</p>';
     $html .= "<barcode code='http://localhost/Web_semestre/web_Project/pages/adminManejarInventario.php' type='QR' class='barcode' size='1.5' error='M' />";
 
+    $html .= '<br><br>
+    <h2>Reporte de ventas</h2>
+    <h4>Las ventas de hoy fueron:</h4>
+    <table>
+    <tr>
+        <th>Producto</th><th>Cantidad</th><th>Ganancia</th>
+    </tr>';
 
+    $ganancia = 0;
+
+    $sqlInvVen = "SELECT * FROM detalle_pedido WHERE estado = '1' AND auditoria = '$hoy'";
+    $resInvVen = mysqli_query($conexion, $sqlInvVen);
+    while($filas = mysqli_fetch_array($resInvVen, MYSQLI_BOTH )){
+            $sqlPro = "SELECT * FROM inventario WHERE id_producto = '$filas[1]'";
+            $resPro = mysqli_query($conexion, $sqlPro); 
+            $row = mysqli_fetch_array($resPro, MYSQLI_BOTH);
+
+            $gananciaPro = ($row[4]*$filas[2]);
+            $ganancia = $ganancia + $gananciaPro;
+
+            $html .= '<tr>
+            <td>'.$row[1].'</td>
+            <td>'.$filas[2].' unidades</td>
+            <td>$'.$gananciaPro.'</td>
+        </tr>';
+    }
+    $html .= '</table>
+    <p style="color: blue;">Ganancia total del día: '.$ganancia.'</p>';
 
     require_once('./../vendor/autoload.php');
     $mpdf = new \Mpdf\Mpdf();
