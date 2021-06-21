@@ -13,7 +13,10 @@ body{
     width: 600px;
     border-radius: 10px;
     background-color: #FFEBCD   ;
-    margin: 10% auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: 7px 13px 37px #000;
     padding: 20px 30px;
     border-top: 4px solid #017bab;
