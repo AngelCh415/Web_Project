@@ -47,8 +47,6 @@ $(document).ready(function(){
                                         boxWidth: "50%",
                                         useBootstrap: false,
                                         onDestroy:function(){
-                                        if(AX.codigo == 2)
-                                            window.location.href = "./saldoCliente.php";
                                         }
                                     });
                                 }
