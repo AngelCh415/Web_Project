@@ -16,21 +16,58 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`cafeteria2021` /*!40100 DEFAULT CHARACT
 
 USE `cafeteria2021`;
 
+/*Table structure for table `carrito` */
+
+DROP TABLE IF EXISTS `carrito`;
+
+CREATE TABLE `carrito` (
+  `id_usuario` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  KEY `id_producto` (`id_producto`),
+  KEY `INDEX` (`id_usuario`) USING BTREE,
+  CONSTRAINT `id_producto` FOREIGN KEY (`id_producto`) REFERENCES `inventario` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `carrito` */
+
+insert  into `carrito`(`id_usuario`,`id_producto`,`cantidad`) values 
+(2,1,2),
+(2,9,1),
+(2,15,1),
+(2,20,1),
+(2,25,1);
+
 /*Table structure for table `detalle_pedido` */
 
 DROP TABLE IF EXISTS `detalle_pedido`;
 
 CREATE TABLE `detalle_pedido` (
-  `id_pedido` int(10) NOT NULL,
+  `id_pedido` int(10) NOT NULL AUTO_INCREMENT,
   `id_producto` int(5) NOT NULL,
   `cantidad` int(8) NOT NULL,
+  `id_usuario` int(5) NOT NULL,
+  `estado` int(2) NOT NULL,
+  `auditoria` date DEFAULT NULL,
   PRIMARY KEY (`id_pedido`,`id_producto`),
   KEY `fkproducto` (`id_producto`),
-  CONSTRAINT `fkpedido` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fkproducto` FOREIGN KEY (`id_producto`) REFERENCES `inventario` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `fkusuario` (`id_usuario`),
+  CONSTRAINT `fkproducto` FOREIGN KEY (`id_producto`) REFERENCES `inventario` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fkusuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 /*Data for the table `detalle_pedido` */
+
+insert  into `detalle_pedido`(`id_pedido`,`id_producto`,`cantidad`,`id_usuario`,`estado`,`auditoria`) values 
+(12,1,1,1,1,'2021-06-20'),
+(13,5,1,1,1,'2021-06-12'),
+(14,11,1,1,1,'2021-06-19'),
+(15,2,1,59,1,'2021-06-20'),
+(16,5,1,59,1,'2021-06-20'),
+(17,10,1,59,0,'2021-06-20'),
+(18,26,1,59,0,'2021-06-20'),
+(19,36,1,59,0,'2021-06-20');
 
 /*Table structure for table `inventario` */
 
@@ -51,18 +88,18 @@ CREATE TABLE `inventario` (
 /*Data for the table `inventario` */
 
 insert  into `inventario`(`id_producto`,`nombre`,`descripcion`,`existencia`,`precio`,`imagen`,`auditoria`,`categoria`) values 
-(1,'Espresso','60ml de espresso. Dulce con un acidez ligero',0,40,'espresso','2021-06-15 11:31:54','Café'),
-(2,'Cortado','Espresso con leche texturizada 180ml',0,48,'cortado','2021-06-15 11:31:54','Café'),
-(3,'CHIQUITITO','Leche condensada, espresso y leche texturizada 240ml',0,50,'chiquitito','2021-06-15 11:31:54','Café'),
-(4,'Americano','Espresso con agua caliente 360ml',0,48,'americano','2021-06-15 11:33:30','Café'),
-(5,'Cappuccino','Espreso con leche texturizada',0,55,'capuccino','2021-06-15 11:37:47','Café'),
-(6,'Latte','Espresso con leche texturizada 480ml',0,58,'latte','2021-06-15 11:37:47','Café'),
-(7,'Café con leche','Espresso con agua caliente, y leche texturizada 480ml',0,55,'cafe_con_leche','2021-06-15 11:37:47','Café'),
-(8,'Latte Vainilla','Espresso, vainilla y leche texturizada 480ml',0,60,'latte_vainilla','2021-06-15 11:37:47','Café'),
+(1,'Espresso','60ml de espresso. Dulce con un acidez ligero',48,40,'espresso','2021-06-15 11:31:54','Café'),
+(2,'Cortado','Espresso con leche texturizada 180ml',2,48,'cortado','2021-06-15 11:31:54','Café'),
+(3,'CHIQUITITO','Leche condensada, espresso y leche texturizada 240ml',75,50,'chiquitito','2021-06-15 11:31:54','Café'),
+(4,'Americano','Espresso con agua caliente 360ml',5,48,'americano','2021-06-15 11:33:30','Café'),
+(5,'Cappuccino','Espreso con leche texturizada',1,55,'capuccino','2021-06-15 11:37:47','Café'),
+(6,'Latte','Espresso con leche texturizada 480ml',2,58,'latte','2021-06-15 11:37:47','Café'),
+(7,'Café con leche','Espresso con agua caliente, y leche texturizada 480ml',57,55,'cafe_con_leche','2021-06-15 11:37:47','Café'),
+(8,'Latte Vainilla','Espresso, vainilla y leche texturizada 480ml',2,60,'latte_vainilla','2021-06-15 11:37:47','Café'),
 (9,'Mocha','Espresso, chocolate y leche texturizada 480ml',0,60,'mocha','2021-06-15 11:37:47','Café'),
 (10,'Latte Caramelo','Espresso, caramelo y leche texturizada 480ml',0,60,'latte_caramelo','2021-06-15 11:37:47','Café'),
 (11,'Matcha Latte Puro','Matcha latte hecho con matcha puro 480ml',0,65,'matcha_latte_puro','2021-06-15 11:41:45','Bebidas Calientes'),
-(12,'Matcha Latte Dulce','Matcha latte hecho con matcha poquito endulzado 480ml',0,65,'matcha_latte_dulce','2021-06-15 11:41:46','Bebidas Calientes'),
+(12,'Matcha Latte Dulce','Matcha latte hecho con matcha poquito endulzado 480ml',34,65,'matcha_latte_dulce','2021-06-15 11:41:46','Bebidas Calientes'),
 (13,'Doradita','Bebida con mezcla de especias con base en curcuma 360ml',0,60,'doradita','2021-06-15 11:41:46','Bebidas Calientes'),
 (14,'Betabel Latte','Bebida con mezcla de especias con base de betabel 360ml',0,60,'betabel_latte','2021-06-15 11:41:46','Bebidas Calientes'),
 (15,'Té','Escoges el tipo de té',0,50,'te_','2021-06-15 11:41:46','Bebidas Calientes'),
@@ -70,7 +107,7 @@ insert  into `inventario`(`id_producto`,`nombre`,`descripcion`,`existencia`,`pre
 (17,'Chai Dulce','Base de chai poco endulzado con leche texturizada 480ml',0,65,'chai_dulce','2021-06-15 11:44:39','Bebidas Calientes'),
 (18,'Chai Masala','Chai natural de especies 360ml',0,55,'chai_masala','2021-06-15 11:44:39','Bebidas Calientes'),
 (19,'Chai Espresso','Base de chai poco endulzado, leche texturizada y espresso 480ml',0,70,'chai_espresso','2021-06-15 11:44:39','Bebidas Calientes'),
-(20,'Babyccino','Leche texturizada con sabor a tu elección 240ml',0,40,'babyccino','2021-06-15 11:44:39','Bebidas Calientes'),
+(20,'Babyccino','Leche texturizada con sabor a tu elección 240ml',42,40,'babyccino','2021-06-15 11:44:39','Bebidas Calientes'),
 (21,'Aeropress','Café hecho en manera artesanal en el Aeropress 300ml',0,50,'aeropress','2021-06-15 11:47:43','Métodos Artesanales'),
 (22,'Chemex','Café hecho en manera artesanal en el Chemex 300ml',0,50,'chemex','2021-06-15 11:47:44','Métodos Artesanales'),
 (23,'Prensa Francesa','Café hecho en manera artesanal en el Prensa Francesa 300ml',0,50,'prensa_francesa','2021-06-15 11:47:44','Métodos Artesanales'),
@@ -124,23 +161,7 @@ insert  into `inventario`(`id_producto`,`nombre`,`descripcion`,`existencia`,`pre
 (71,'Granola de la casa','Una bolsa de 250 gramos de nuestra granola hecha en casa',0,100,'granola_de_la_casa','2021-06-15 12:20:07','Café en grano-Para casa'),
 (72,'Mama Pacha Chocolate en Barra','Mamá Pacha chocolate artesanal, Ingredientes: 75% cacao nativo, azúcar de coco 70 gramos',0,125,'mama_pacha_chocolate_en_barra','2021-06-15 12:20:07','Café en grano-Para casa'),
 (73,'Tote Bag Chiquitito','-',0,250,'tote_bag_chiquitito','2021-06-15 12:20:07','Café en grano-Para casa'),
-(74,'Hamburguesas BBQ','-',0,80,'hamburguesas_bbq','2021-06-15 12:21:06','Hamburguesas');
-
-/*Table structure for table `pedidos` */
-
-DROP TABLE IF EXISTS `pedidos`;
-
-CREATE TABLE `pedidos` (
-  `id_pedido` int(10) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(5) NOT NULL,
-  `estado` int(8) NOT NULL,
-  `auditoria` datetime NOT NULL,
-  PRIMARY KEY (`id_pedido`),
-  KEY `fkusuario` (`id_usuario`),
-  CONSTRAINT `fkusuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `pedidos` */
+(74,'Hamburguesas BBQ','-',65,80,'hamburguesas_bbq','2021-06-15 12:21:06','Hamburguesas');
 
 /*Table structure for table `usuarios` */
 
@@ -151,20 +172,22 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(128) NOT NULL,
   `correo` varchar(128) NOT NULL,
   `contrasena` varchar(32) NOT NULL,
+  `numero` char(10) DEFAULT NULL,
   `tipo` int(1) NOT NULL,
   `saldo` double DEFAULT NULL,
   `auditoria` datetime DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
 /*Data for the table `usuarios` */
 
-insert  into `usuarios`(`id_usuario`,`nombre`,`correo`,`contrasena`,`tipo`,`saldo`,`auditoria`) values 
-(1,'Administrador','maildelproyectocafe@gmail.com','c3fb70e0148b844856fa9d1674ffaf4e',0,NULL,'2021-06-15 11:22:37'),
-(2,'Cocinero','kitchen1@gmail.com','acbd9ab2f68bea3f5291f825416546a1',1,NULL,'2021-06-15 11:23:29'),
-(3,'Juan García','benvadam@gmail.com','25d55ad283aa400af464c76d713c07ad',2,300,'2021-06-15 11:24:27'),
-(4,'Fernando Diosdado','thelvadam@outlook.com','25d55ad283aa400af464c76d713c07ad',2,0,'2021-06-15 11:25:25'),
-(5,'Darío Martínez','correo@gmail.com','25d55ad283aa400af464c76d713c07ad',2,24,'2021-06-15 11:26:22');
+insert  into `usuarios`(`id_usuario`,`nombre`,`correo`,`contrasena`,`numero`,`tipo`,`saldo`,`auditoria`) values 
+(1,'Administrador','maildelproyectocafe@gmail.com','c3fb70e0148b844856fa9d1674ffaf4e',NULL,0,288,'2021-06-15 11:22:37'),
+(2,'Cocinero','kitchen1@gmail.com','110169456ce5030bba735693870435ff',NULL,1,0,'2021-06-15 11:23:29'),
+(3,'Juan García','benvadam@gmail.com','25d55ad283aa400af464c76d713c07ad',NULL,2,1600,'2021-06-15 11:24:27'),
+(4,'Fernando Diosdado','thelvadam@outlook.com','25d55ad283aa400af464c76d713c07ad',NULL,2,250,'2021-06-15 11:25:25'),
+(5,'Darío Martínez','correo@gmail.com','25d55ad283aa400af464c76d713c07ad',NULL,2,248,'2021-06-15 11:26:22'),
+(59,'Diego Ivan Aragón García','iivanggarcia0@gmail.com','25d55ad283aa400af464c76d713c07ad','9512351246',2,2999617,'2021-06-20 22:18:45');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

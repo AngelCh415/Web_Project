@@ -5,13 +5,15 @@
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
     mysqli_set_charset($conexion,"utf8");
 
+    $infUsuario;
+
     if($sesion == 1){
       $correo = $_SESSION["login"];
       $sqlUsuario = "SELECT * FROM usuarios WHERE correo = '$correo'";
       $resUsuario = mysqli_query($conexion,$sqlUsuario);
       $infUsuario = mysqli_fetch_row($resUsuario);
     
-      $tipoUsuario = $infUsuario[4];
+      $tipoUsuario = $infUsuario[5];
     } else {
       $tipoUsuario = 2;
     }
@@ -26,7 +28,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioCafe.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioCafe.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioCafe.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -44,9 +46,9 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioBCalientes.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioBCalientes.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
-            $trInventarioBCalientes.="<a class='btn brown' src='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
+            $trInventarioBCalientes.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
         $trInventarioBCalientes .="</td>
         </tr>";
@@ -62,7 +64,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioMArtesanales.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioMArtesanales.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioMArtesanales.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -80,7 +82,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioBFrias.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioBFrias.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioBFrias.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -98,7 +100,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioPostres.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioPostres.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioPostres.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -116,7 +118,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioPanquesGalletasScones.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioPanquesGalletasScones.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioPanquesGalletasScones.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -134,7 +136,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioSandwiches.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioSandwiches.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioSandwiches.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -152,7 +154,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioCafeGrano.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioCafeGrano.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioCafeGrano.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -170,7 +172,7 @@
             <td>$$filas[4]</td>
             <td>";
         if($sesion)
-            $trInventarioHamburguesas.="<i class='btn brown fas fa-cart-plus addCarrito'></i>";
+            $trInventarioHamburguesas.="<i class='btn brown fas fa-cart-plus addCarrito' data-usr='$infUsuario[0]' data-prod='$filas[0]'></i>";
         else
             $trInventarioHamburguesas.="<a class='btn brown' href='./pages/login.html'><i class='fas fa-cart-plus'></i></a>";
                 
@@ -213,10 +215,10 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
-          <li><a href='<?php if($sesion) echo "./pages/config_usuario.html"; else echo "./pages/registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
+          <li><a href='<?php if($sesion) echo "./pages/config_usuario.php"; else echo "./pages/registroCliente.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
           <li><a href='<?php if($sesion) echo "./pages/carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
+          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/pedidos.php";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <li><a href='<?php if($tipoUsuario == 0) echo "./pages/administrador.php";?>'><?php if($tipoUsuario == 0) echo "Pag. administrador";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
         </ul>
@@ -225,10 +227,10 @@
     </div>
     <ul class="sidenav" id="mobile-demo">
           <li><a href='<?php if($sesion) echo "./pages/logout.php"; else echo "./pages/login.html";?>'><?php if($sesion) echo "Cerrar sesión"; else echo "Iniciar sesión";?></a></li>
-          <li><a href='<?php if($sesion) echo "./pages/config_usuario.html"; else echo "./pages/registro.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
+          <li><a href='<?php if($sesion) echo "./pages/config_usuario.php"; else echo "./pages/registroCliente.html";?>'><?php if($sesion) echo "Ver perfil"; else echo "Crear cuenta";?></a></li>
           <li><a href='<?php if($sesion) echo "./pages/carrito.php";?>'><?php if($sesion) echo "Ver carrito";?></a></li>
+          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/pedidos.php";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <li><a href='<?php if($tipoUsuario == 0) echo "./pages/administrador.php";?>'><?php if($tipoUsuario == 0) echo "Pag. administrador";?></a></li>
-          <li><a href='<?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "./pages/registro.html";?>'><?php if($tipoUsuario == 0 || $tipoUsuario == 1) echo "Ver pedidos";?></a></li>
           <!--<li><a href="">Ver perfil</a></li>
           <li><a href="">Carrito</a></li>-->
     </ul> <!-- /menu mobile-->
