@@ -83,10 +83,10 @@
             <h4 class="black-text center"><i class="fas fa-print"></i> Reportes diarios</h4><br>
             <div class="row">
                 <div class="col s12 m6 l6">
-                    <a href="./adminGenerarPDF.php" class="btn brown lighten-1" style="width:100%;"><i></i>Ver reporte en PDF</a>
+                    <a href="./adminGenerarPDF.php?ver=1" class="btn brown lighten-1" style="width:100%;"><i></i>Ver reporte en PDF</a>
                 </div>
                 <div class="col s12  m6 l6">
-                    <a href="./adminGenerarPDF.php?ver=no" class="btn brown lighten-1 white-text" style="width:100%;"><i></i>Guardar reporte</a>
+                    <a href="./adminGenerarPDF.php?ver=2" class="btn brown lighten-1 white-text" style="width:100%;"><i></i>Guardar reporte</a>
                 </div>
             </div>
         

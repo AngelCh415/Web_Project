@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    $ver = $_REQUEST["ver"];
+
     $conexion = mysqli_connect("localhost","root","","cafeteria2021");
     mysqli_set_charset($conexion,"utf8");
 
@@ -99,8 +101,11 @@
     $mpdf->showWatermarkText = true;
 
     $mpdf->WriteHTML($html);
-    $mpdf->output(); //para solo mostrar el pdf
-    //$mpdf->Output("./pdfs/$boleta.pdf","F"); //Si necesitamos que el archivo se guarde en una ubicación especifica
-    //header("location:./administracion.php"); //En complemento a la línea anterior, en cuanto se genere y guarde el archivo, direccionar de manera automática a nuestro usuario a otra página
+    if($ver == 1){
+        $mpdf->output(); //para solo mostrar el pdf
+    }else{
+        $mpdf->Output("./reportes/reporte_$hoy.pdf","F");
+        header("location:./administrador.php");
+    }
     exit;
 ?>
